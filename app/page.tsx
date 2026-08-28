@@ -1,8 +1,7 @@
 const Arrow = () => <span aria-hidden="true">↗</span>;
 const BrandMark = () => (
-  <span className="brand-mark" aria-label="K2VOLT">
-    <strong>K2</strong>
-    <small>VOLT</small>
+  <span className="brand-picture" aria-label="K2VOLT">
+    <img src="/images/k2volt-logo-official.png" alt="K2VOLT" />
   </span>
 );
 

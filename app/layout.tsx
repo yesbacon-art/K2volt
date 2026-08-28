@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'A K2 Energy brand bringing two decades of battery expertise to residential, commercial, industrial, and utility-scale energy storage.',
   icons: {
-    icon: '/k2volt-logo.png',
+    icon: '/images/k2volt-logo-official.png',
   },
   openGraph: {
     title: 'K2VOLT | Proven Battery DNA. Built for What’s Next.',
