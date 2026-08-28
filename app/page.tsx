@@ -46,13 +46,13 @@ export default function Home() {
           <BrandMark />
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#solutions">Solutions</a>
-          <a href="#heritage">Heritage</a>
+          <a href="#solutions">Energy Storage</a>
           <a href="#platform">Technology</a>
+          <a href="#heritage">K2 Heritage</a>
           <a href="#company">Company</a>
         </nav>
         <a className="nav-cta" href="#contact">
-          Start a project <Arrow />
+          Talk to K2VOLT <Arrow />
         </a>
       </header>
 
@@ -66,12 +66,12 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-copy">
           <p className="eyebrow">
-            <span /> A K2 Energy brand · Battery innovation since 2006
+            <span /> American energy storage · Backed by K2 Energy since 2006
           </p>
           <h1>
-            Proven battery DNA.
+            Energy storage.
             <br />
-            Built for <em>what&apos;s next.</em>
+            Engineered for <em>what&apos;s next.</em>
           </h1>
           <p className="hero-intro">
             K2VOLT brings two decades of K2 Energy cell, pack, and system
@@ -80,10 +80,10 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#solutions">
-              Explore solutions <Arrow />
+              Explore systems <Arrow />
             </a>
             <a className="button button-quiet" href="#heritage">
-              Our battery heritage
+              20 years of battery expertise
             </a>
           </div>
           <div className="hero-proof">
