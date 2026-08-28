@@ -1,0 +1,39 @@
+import type { Metadata } from 'next';
+import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
+
+export const metadata: Metadata = {
+  title: 'About K2VOLT | American Energy Storage Company',
+  description: 'K2VOLT is an American-owned K2 Energy brand focused on intelligent stationary energy storage.',
+};
+
+export default function CompanyPage() {
+  return (
+    <PageFrame>
+      <PageHero
+        eyebrow="About K2VOLT"
+        title={<>American energy.<br /><em>Ready for more.</em></>}
+        description="K2VOLT is an American-owned energy-storage company built to turn proven battery knowledge into dependable power at every scale."
+        image="/images/k2volt-utility.png"
+        alt="K2VOLT energy storage infrastructure in the United States"
+      />
+      <section className="page-section">
+        <div className="section-shell section-intro-grid">
+          <div><p className="section-kicker">Our company</p><h2>A focused mission.<br />A proven foundation.</h2></div>
+          <div><p>K2VOLT is the stationary energy-storage brand of K2 Energy. We connect two decades of battery experience with modern energy management so American families, businesses, and power operators can decide when and how their energy works.</p></div>
+        </div>
+        <div className="section-shell capability-grid">
+          <article><span>01</span><h3>Battery-first thinking</h3><p>Our system philosophy begins with cell behavior, safety, durability, and real-world operating conditions.</p></article>
+          <article><span>02</span><h3>Intelligence included</h3><p>Controls and operating visibility are designed as part of the storage system—not added as an afterthought.</p></article>
+          <article><span>03</span><h3>Built to keep growing</h3><p>A modular approach helps customers expand as energy needs, applications, and opportunities evolve.</p></article>
+        </div>
+      </section>
+      <section className="page-section page-section-dark">
+        <div className="section-shell section-intro-grid">
+          <div><p className="section-kicker section-kicker-dark">What we are here to do</p><h2>Make stored energy<br />more useful.</h2></div>
+          <div><p style={{ color: '#9db3be' }}>We design energy-storage systems that help customers strengthen resilience, use renewable energy more effectively, manage power costs, and support a more flexible grid.</p></div>
+        </div>
+      </section>
+      <ProjectCTA />
+    </PageFrame>
+  );
+}
