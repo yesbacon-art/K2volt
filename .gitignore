@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.next/
+.pnpm-store/
+.vinext/
+.wrangler/
+.DS_Store
+*.tar.gz
