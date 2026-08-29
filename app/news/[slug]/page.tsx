@@ -3,7 +3,9 @@ import { notFound } from 'next/navigation';
 import { news } from '../../_data/content';
 import { Arrow, PageFrame } from '../../_components/site';
 
-const origin = 'https://k2volt-energy.yesbacon130976.chatgpt.site';
+const origin =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  'https://k2volt-energy.yesbacon130976.chatgpt.site';
 
 export function generateStaticParams() {
   return news.map((item) => ({ slug: item.slug }));
