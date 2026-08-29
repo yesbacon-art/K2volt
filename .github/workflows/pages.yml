@@ -42,7 +42,7 @@ jobs:
         run: pnpm exec next build
         env:
           GITHUB_PAGES: 'true'
-          NEXT_PUBLIC_SITE_URL: https://www.2kvolt.com
+          NEXT_PUBLIC_SITE_URL: https://www.k2volt.com
 
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
