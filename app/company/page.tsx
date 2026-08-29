@@ -7,6 +7,33 @@ const futurePriorities = [
   ['03', 'Enduring energy investment', 'Build long-term partnerships and infrastructure that strengthen American resilience, industry, and energy independence.'],
 ] as const;
 
+const leadershipTeam = [
+  {
+    number: '01',
+    function: 'Executive leadership',
+    role: 'President & Chief Executive Officer',
+    bio: 'Guides K2VOLT’s long-term strategy, American market development, and commitment to dependable energy infrastructure.',
+  },
+  {
+    number: '02',
+    function: 'Technology leadership',
+    role: 'Chief Technology Officer',
+    bio: 'Leads battery-system architecture, energy intelligence, product engineering, and the next generation of storage innovation.',
+  },
+  {
+    number: '03',
+    function: 'Operations leadership',
+    role: 'Chief Operating Officer',
+    bio: 'Builds the operating, manufacturing, quality, and supply capabilities required to deliver at every scale.',
+  },
+  {
+    number: '04',
+    function: 'Commercial leadership',
+    role: 'Vice President, Business Development',
+    bio: 'Develops strategic partnerships and connects K2VOLT solutions with residential, commercial, and utility customers.',
+  },
+] as const;
+
 export const metadata: Metadata = {
   title: 'About K2VOLT | American Energy Storage Company',
   description: 'K2VOLT is an American-owned K2 Energy brand focused on intelligent stationary energy storage.',
@@ -37,6 +64,29 @@ export default function CompanyPage() {
         <div className="section-shell section-intro-grid">
           <div><p className="section-kicker section-kicker-dark">What we are here to do</p><h2>Make stored energy<br />more useful.</h2></div>
           <div><p style={{ color: '#9db3be' }}>We design energy-storage systems that help customers strengthen resilience, use renewable energy more effectively, manage power costs, and support a more flexible grid.</p></div>
+        </div>
+      </section>
+      <section className="page-section company-leadership" id="leadership">
+        <div className="section-shell leadership-heading">
+          <div>
+            <p className="section-kicker">Leadership</p>
+            <h2>Built by people<br />who think long term.</h2>
+          </div>
+          <p>Four disciplines work as one leadership team—connecting company direction, technology, operations, and customer growth around a clear American energy mission.</p>
+        </div>
+        <div className="section-shell leadership-grid">
+          {leadershipTeam.map((leader) => (
+            <article className="leadership-card" key={leader.number}>
+              <div className="leadership-card-top">
+                <span className="leadership-number">{leader.number}</span>
+                <span className="leadership-status">Name &amp; portrait to be confirmed</span>
+              </div>
+              <div className="leadership-monogram" aria-hidden="true">K2</div>
+              <p className="leadership-function">{leader.function}</p>
+              <h3>{leader.role}</h3>
+              <p className="leadership-bio">{leader.bio}</p>
+            </article>
+          ))}
         </div>
       </section>
       <section className="page-section company-future" id="american-future">
