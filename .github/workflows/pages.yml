@@ -42,7 +42,7 @@ jobs:
         run: pnpm exec next build
         env:
           GITHUB_PAGES: 'true'
-          NEXT_PUBLIC_SITE_URL: https://yesbacon-art.github.io
+          NEXT_PUBLIC_SITE_URL: https://www.2kvolt.com
 
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
