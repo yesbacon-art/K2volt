@@ -20,8 +20,9 @@ export function SiteHeader() {
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a href="/solutions">Energy Storage</a>
         <a href="/technology">Technology</a>
-        <a href="/heritage">K2 Heritage</a>
+        <a href="/heritage">K2 History</a>
         <a href="/company">Company</a>
+        <a href="/company#american-future">U.S. Future</a>
         <a href="/news">News</a>
       </nav>
       <a className="nav-cta" href="/contact">
@@ -48,8 +49,9 @@ export function SiteFooter() {
         <div>
           <strong>Company</strong>
           <a href="/technology">Technology</a>
-          <a href="/heritage">K2 Heritage</a>
+          <a href="/heritage">K2 History</a>
           <a href="/company">About K2VOLT</a>
+          <a href="/company#american-future">U.S. Future</a>
           <a href="/news">News</a>
           <a href="/contact">Contact</a>
         </div>

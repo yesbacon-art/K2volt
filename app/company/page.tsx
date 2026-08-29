@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
 
+const futurePriorities = [
+  ['01', 'Research in America', 'Develop next-generation storage systems, controls, and operating intelligence around American customers and grid conditions.'],
+  ['02', 'Manufacturing capability', 'Expand the equipment, supplier, and production ecosystem needed to manufacture advanced energy-storage solutions in the United States.'],
+  ['03', 'Enduring energy investment', 'Build long-term partnerships and infrastructure that strengthen American resilience, industry, and energy independence.'],
+] as const;
+
 export const metadata: Metadata = {
   title: 'About K2VOLT | American Energy Storage Company',
   description: 'K2VOLT is an American-owned K2 Energy brand focused on intelligent stationary energy storage.',
@@ -31,6 +37,23 @@ export default function CompanyPage() {
         <div className="section-shell section-intro-grid">
           <div><p className="section-kicker section-kicker-dark">What we are here to do</p><h2>Make stored energy<br />more useful.</h2></div>
           <div><p style={{ color: '#9db3be' }}>We design energy-storage systems that help customers strengthen resilience, use renewable energy more effectively, manage power costs, and support a more flexible grid.</p></div>
+        </div>
+      </section>
+      <section className="page-section company-future" id="american-future">
+        <div className="section-shell company-future-intro">
+          <div>
+            <p className="section-kicker">The next American energy chapter</p>
+            <h2>Deep roots.<br />A long horizon.</h2>
+          </div>
+          <div>
+            <p className="company-future-lead">K2VOLT is an American pioneer in new-energy research and energy-storage equipment manufacturing.</p>
+            <p>We are committed to deepening our presence in the United States—advancing technology, strengthening domestic manufacturing capability, and helping build the energy systems America will depend on for decades.</p>
+          </div>
+        </div>
+        <div className="section-shell capability-grid company-future-grid">
+          {futurePriorities.map(([number, title, copy]) => (
+            <article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>
+          ))}
         </div>
       </section>
       <ProjectCTA />

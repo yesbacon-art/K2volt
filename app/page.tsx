@@ -8,6 +8,30 @@ import {
   SolutionPreview,
 } from './_components/site';
 
+const k2Milestones = [
+  {
+    year: '2006',
+    title: 'Battery engineering begins',
+    copy: 'K2 Energy begins developing lithium iron phosphate cell technology in Nevada.',
+  },
+  {
+    year: '2010–2025',
+    title: 'From cells to complete systems',
+    copy: 'Experience expands across packs, modules, high-performance systems, and demanding American applications.',
+  },
+  {
+    year: 'Today',
+    title: 'K2VOLT advances the legacy',
+    copy: 'Twenty years of battery knowledge become a focused American platform for stationary energy storage.',
+  },
+];
+
+const americanCommitments = [
+  ['01', 'U.S. research & development', 'Advance battery systems, power electronics, controls, and energy intelligence for American operating needs.'],
+  ['02', 'Advanced equipment manufacturing', 'Build energy-storage equipment and manufacturing capability that support a stronger domestic energy industry.'],
+  ['03', 'Long-term American growth', 'Invest in partnerships, technical talent, and infrastructure that deepen K2VOLT’s role in America’s energy future.'],
+] as const;
+
 export default function Home() {
   return (
     <main>
@@ -75,6 +99,48 @@ export default function Home() {
             </p>
             <a className="inline-link inline-link-light" href="/heritage">Explore the K2 story <Arrow /></a>
           </div>
+        </div>
+        <div className="section-shell home-history-timeline" aria-label="K2 history milestones">
+          {k2Milestones.map((milestone) => (
+            <article key={milestone.year}>
+              <time>{milestone.year}</time>
+              <span />
+              <h3>{milestone.title}</h3>
+              <p>{milestone.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-american-future" id="american-future">
+        <div className="section-shell american-future-head">
+          <div>
+            <p className="section-kicker">Built for America&apos;s energy future</p>
+            <h2>Research here.<br />Build here.<br /><em>Grow here.</em></h2>
+          </div>
+          <div>
+            <p className="american-future-lead">
+              K2VOLT is an American pioneer in new-energy research,
+              engineering, and energy-storage equipment manufacturing.
+            </p>
+            <p>
+              Our long-term direction is clear: deepen technical capability,
+              strengthen domestic manufacturing, and build enduring energy
+              infrastructure across the United States.
+            </p>
+          </div>
+        </div>
+        <div className="section-shell american-commitments">
+          {americanCommitments.map(([number, title, copy]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+        <div className="section-shell american-future-link">
+          <a className="inline-link" href="/company#american-future">Explore our American future <Arrow /></a>
         </div>
       </section>
 

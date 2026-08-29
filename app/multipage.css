@@ -2,10 +2,12 @@
 .site-header {
   height: 96px;
   padding-inline: max(28px, calc((100vw - 1540px) / 2 + 88px));
-  background: rgba(255,255,255,.97);
+  background: #fff;
+  backdrop-filter: none;
 }
+.desktop-nav { gap: clamp(22px, 2.15vw, 38px); font-size: 14px; }
 .desktop-nav a { padding: 39px 0 38px; }
-.nav-cta { border-radius: 0; }
+.nav-cta { border-radius: 0; font-size: 14px; }
 
 .home-hero {
   position: relative;
@@ -140,6 +142,28 @@
 .home-heritage-copy h2 { color: white; font-size: clamp(50px, 4.7vw, 74px); }
 .home-heritage-copy > p:not(.section-kicker) { max-width: 690px; margin: 30px 0 34px; color: #9db3be; font-size: 15px; line-height: 1.75; }
 .inline-link-light { color: white; border-color: rgba(255,255,255,.35); }
+.home-history-timeline { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 105px; }
+.home-history-timeline article { padding-right: clamp(32px, 5vw, 80px); }
+.home-history-timeline time { color: #62e89a; font-size: 10px; font-weight: 750; letter-spacing: .12em; }
+.home-history-timeline article > span { position: relative; display: block; height: 1px; margin: 22px 0 30px; background: rgba(255,255,255,.18); }
+.home-history-timeline article > span:before { content: ''; position: absolute; left: 0; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--green); }
+.home-history-timeline h3 { margin: 0 0 12px; font-size: 17px; font-weight: 560; }
+.home-history-timeline p { max-width: 340px; margin: 0; color: #819ba7; font-size: 12px; line-height: 1.7; }
+
+.home-american-future { padding: clamp(135px, 13vw, 205px) 0; background: #fff; }
+.american-future-head { display: grid; grid-template-columns: 1.12fr .88fr; gap: 11vw; align-items: end; }
+.american-future-head h2 { margin: 0; color: var(--ink); font-size: clamp(56px, 6vw, 94px); line-height: .92; letter-spacing: -.064em; font-weight: 570; }
+.american-future-head h2 em { color: #0aa566; font-style: normal; font-weight: 310; }
+.american-future-head > div:last-child { padding-bottom: 4px; }
+.american-future-head > div:last-child p { color: #607782; font-size: 15px; line-height: 1.75; }
+.american-future-head .american-future-lead { margin-top: 0; color: var(--navy); font-size: 22px; line-height: 1.55; letter-spacing: -.015em; }
+.american-commitments { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 95px; border-top: 1px solid #cad6da; border-bottom: 1px solid #cad6da; }
+.american-commitments article { min-height: 270px; padding: 30px clamp(26px, 3vw, 48px) 34px 0; }
+.american-commitments article + article { padding-left: clamp(26px, 3vw, 48px); border-left: 1px solid #cad6da; }
+.american-commitments span { color: var(--green); font-size: 9px; }
+.american-commitments h3 { margin: 82px 0 14px; font-size: 18px; font-weight: 570; }
+.american-commitments p { margin: 0; color: #607782; font-size: 12px; line-height: 1.68; }
+.american-future-link { margin-top: 35px; }
 
 .home-technology { padding: clamp(135px, 13vw, 205px) 0; background: #f4f8f9; }
 .home-technology-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 11vw; }
@@ -213,6 +237,17 @@
 .contact-details span { display: block; margin-bottom: 8px; color: #6a818d; font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
 .contact-details a, .contact-details p { margin: 0; color: var(--navy); font-size: 15px; line-height: 1.6; }
 .contact-note { color: #607782; font-size: 14px; line-height: 1.75; }
+.company-future { background: #f4f8f9; scroll-margin-top: 96px; }
+.company-future-intro { display: grid; grid-template-columns: 1.08fr .92fr; gap: 11vw; align-items: end; }
+.company-future-intro > div:last-child p { color: #607782; font-size: 15px; line-height: 1.75; }
+.company-future-intro .company-future-lead { margin-top: 0; color: var(--navy); font-size: 22px; line-height: 1.55; letter-spacing: -.015em; }
+.company-future-grid { margin-top: 90px; }
+
+@media (max-width: 1260px) {
+  .site-header { padding-inline: 34px; }
+  .desktop-nav { gap: 18px; font-size: 12px; }
+  .nav-cta { font-size: 12px; }
+}
 
 @media (max-width: 980px) {
   .site-header { height: 88px; }
@@ -220,7 +255,7 @@
   .home-hero-wash { inset: 88px 0 96px; }
   .home-hero-inner { padding-top: 190px; }
   .home-proof { padding-inline: 28px; }
-  .home-intro-head, .home-heritage-grid, .home-technology-grid, .section-intro-grid, .split-section, .contact-layout { grid-template-columns: 1fr; gap: 55px; }
+  .home-intro-head, .home-heritage-grid, .home-technology-grid, .american-future-head, .company-future-intro, .section-intro-grid, .split-section, .contact-layout { grid-template-columns: 1fr; gap: 55px; }
   .home-solutions, .news-grid { grid-template-columns: 1fr; }
   .solution-preview { display: grid; grid-template-columns: 46% 1fr; gap: 34px; }
   .solution-preview-image { height: 330px; }
@@ -236,6 +271,11 @@
   .capability-grid article { min-height: 200px; padding: 28px 0; }
   .capability-grid article + article { padding-left: 0; border-left: 0; border-top: 1px solid #cad6da; }
   .capability-grid h3 { margin-top: 42px; }
+  .home-history-timeline { margin-top: 80px; }
+  .american-commitments { grid-template-columns: 1fr; }
+  .american-commitments article { min-height: 210px; padding: 28px 0; }
+  .american-commitments article + article { padding-left: 0; border-left: 0; border-top: 1px solid #cad6da; }
+  .american-commitments h3 { margin-top: 48px; }
   .article-hero { padding-top: 88px; }
   .article-hero > img, .article-hero-wash { inset: 88px 0 0; height: calc(100% - 88px); }
 }
@@ -252,12 +292,14 @@
   .home-proof div { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 5px; padding-right: 15px; }
   .home-proof div + div { padding-left: 18px; }
   .home-proof div:nth-child(3) { display: none; }
-  .home-intro-head h2, .home-heritage-copy h2, .home-technology h2, .section-heading-row h2, .project-cta h2, .page-section h2, .split-section h2 { font-size: 45px; }
+  .home-intro-head h2, .home-heritage-copy h2, .home-technology h2, .american-future-head h2, .section-heading-row h2, .project-cta h2, .page-section h2, .split-section h2 { font-size: 45px; }
   .solution-preview, .news-card { display: block; }
   .solution-preview-image { height: 285px; }
   .news-card-image { height: 245px; min-height: 0; }
   .home-heritage-number { padding: 58px 30px; }
   .home-heritage-copy > img { width: 250px; }
+  .home-history-timeline { grid-template-columns: 1fr; gap: 48px; }
+  .home-history-timeline article { padding-right: 0; }
   .technology-points article { grid-template-columns: 35px 1fr; }
   .technology-points article p { grid-column: 2; }
   .section-heading-row { align-items: flex-start; flex-direction: column; }
