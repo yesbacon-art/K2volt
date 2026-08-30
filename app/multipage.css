@@ -216,17 +216,19 @@
 .heritage-region-grid h3 { margin: 0 0 18px; color: white; font-size: 31px; letter-spacing: -.035em; font-weight: 540; }
 .heritage-region-grid article > p:last-child { max-width: 560px; margin: 0; color: #9db3be; font-size: 13px; line-height: 1.72; }
 .heritage-chronology { overflow: hidden; }
-.heritage-timeline { margin-top: 90px; padding-left: max(28px, calc((100vw - 1540px) / 2 + 88px)); padding-right: max(28px, calc((100vw - 1540px) / 2 + 88px)); list-style: none; }
-.heritage-timeline li { display: grid; grid-template-columns: 180px minmax(0,1fr) 245px; gap: clamp(28px,4vw,72px); padding: 38px 0 42px; border-top: 1px solid #c6d4d9; }
-.heritage-timeline li:last-child { border-bottom: 1px solid #c6d4d9; }
-.heritage-timeline-meta time { display: block; color: var(--green); font-size: 18px; font-weight: 570; letter-spacing: -.02em; }
-.heritage-timeline-meta span { display: block; margin-top: 11px; color: #758c97; font-size: 8px; font-weight: 720; letter-spacing: .12em; text-transform: uppercase; }
-.heritage-timeline-copy h3 { margin: 0 0 14px; color: var(--navy); font-size: 23px; line-height: 1.25; letter-spacing: -.028em; font-weight: 560; }
-.heritage-timeline-copy p { max-width: 700px; margin: 0; color: #607782; font-size: 13px; line-height: 1.72; }
-.heritage-timeline-source { display: flex; align-items: flex-end; justify-content: flex-end; padding-bottom: 2px; text-align: right; }
-.heritage-timeline-source a, .heritage-timeline-source > span { color: #657c88; font-size: 8px; font-weight: 680; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; }
-.heritage-timeline-source a { display: inline-flex; align-items: center; justify-content: flex-end; gap: 12px; }
-.heritage-timeline-source a span { color: var(--green); font-size: 13px; }
+.heritage-chronology-shell { margin-top: 90px; }
+.heritage-chronology-list { display: block; width: 100%; margin: 0; padding: 0; list-style: none; }
+.heritage-chronology-list > li { display: grid; width: 100%; min-width: 0; grid-template-columns: minmax(120px,180px) minmax(360px,1fr) minmax(190px,245px); gap: clamp(28px,4vw,72px); padding: 38px 0 42px; border-top: 1px solid #c6d4d9; }
+.heritage-chronology-list > li:last-child { border-bottom: 1px solid #c6d4d9; }
+.heritage-chronology-meta, .heritage-chronology-copy, .heritage-chronology-source { min-width: 0; }
+.heritage-chronology-meta time { display: block; color: var(--green); font-size: 18px; font-weight: 570; letter-spacing: -.02em; }
+.heritage-chronology-meta span { display: block; margin-top: 11px; color: #758c97; font-size: 8px; font-weight: 720; letter-spacing: .12em; text-transform: uppercase; }
+.heritage-chronology-copy h3 { margin: 0 0 14px; color: var(--navy); font-size: 23px; line-height: 1.25; letter-spacing: -.028em; font-weight: 560; writing-mode: horizontal-tb; word-break: normal; overflow-wrap: break-word; }
+.heritage-chronology-copy p { max-width: 700px; margin: 0; color: #607782; font-size: 13px; line-height: 1.72; writing-mode: horizontal-tb; word-break: normal; overflow-wrap: break-word; }
+.heritage-chronology-source { display: flex; align-items: flex-end; justify-content: flex-end; padding-bottom: 2px; text-align: right; }
+.heritage-chronology-source a, .heritage-chronology-source > span { color: #657c88; font-size: 8px; font-weight: 680; line-height: 1.5; letter-spacing: .08em; text-transform: uppercase; }
+.heritage-chronology-source a { display: inline-flex; align-items: center; justify-content: flex-end; gap: 12px; }
+.heritage-chronology-source a span { color: var(--green); font-size: 13px; }
 .heritage-sources { background: white; }
 .heritage-source-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 90px; border-top: 1px solid #cad6da; border-bottom: 1px solid #cad6da; }
 .heritage-source-grid > a { position: relative; min-height: 250px; padding: 27px 70px 36px 0; }
@@ -323,9 +325,8 @@
   .capability-grid article { min-height: 200px; padding: 28px 0; }
   .capability-grid article + article { padding-left: 0; border-left: 0; border-top: 1px solid #cad6da; }
   .capability-grid h3 { margin-top: 42px; }
-  .heritage-timeline { padding-inline: 28px; }
-  .heritage-timeline li { grid-template-columns: 130px minmax(0,1fr); gap: 32px; }
-  .heritage-timeline-source { grid-column: 2; justify-content: flex-start; text-align: left; }
+  .heritage-chronology-list > li { grid-template-columns: 130px minmax(0,1fr); gap: 32px; }
+  .heritage-chronology-source { grid-column: 2; justify-content: flex-start; text-align: left; }
   .heritage-source-grid { grid-template-columns: 1fr; }
   .heritage-source-grid > a, .heritage-source-grid > a:nth-child(even) { padding-left: 0; border-left: 0; }
   .heritage-source-grid > a + a { border-top: 1px solid #cad6da; }
@@ -368,9 +369,9 @@
   .heritage-region-grid article, .heritage-region-grid article + article { min-height: 260px; padding: 28px 0 34px; border-left: 0; }
   .heritage-region-grid article + article { border-top: 1px solid rgba(255,255,255,.18); }
   .heritage-region-grid article > p:first-of-type { margin-top: 44px; }
-  .heritage-timeline { padding-inline: 22px; }
-  .heritage-timeline li { grid-template-columns: 1fr; gap: 24px; padding: 32px 0 36px; }
-  .heritage-timeline-source { grid-column: 1; justify-content: flex-start; text-align: left; }
+  .heritage-chronology-shell { margin-top: 64px; }
+  .heritage-chronology-list > li { grid-template-columns: 1fr; gap: 24px; padding: 32px 0 36px; }
+  .heritage-chronology-source { grid-column: 1; justify-content: flex-start; text-align: left; }
   .heritage-source-grid > a { min-height: 225px; }
   .leadership-grid { grid-template-columns: 1fr; }
   .leadership-card, .leadership-card + .leadership-card { padding: 28px 0 38px; border-left: 0; }

@@ -117,17 +117,19 @@ export default function HeritagePage() {
           <div><p className="section-kicker">Verified development record</p><h2>From 2006<br />to what comes next.</h2></div>
           <div><p>This timeline combines K2’s published company history with U.S. government award records and official Australian market updates. Each external milestone links to its underlying source.</p></div>
         </div>
-        <ol className="section-shell heritage-timeline">
-          {milestones.map((item) => (
-            <li key={`${item.year}-${item.title}`}>
-              <div className="heritage-timeline-meta"><time>{item.year}</time><span>{item.region}</span></div>
-              <div className="heritage-timeline-copy"><h3>{item.title}</h3><p>{item.copy}</p></div>
-              <div className="heritage-timeline-source">
-                {item.source ? <a href={item.source[1]} target="_blank" rel="noreferrer">{item.source[0]} <Arrow /></a> : <span>K2VOLT company milestone</span>}
-              </div>
-            </li>
-          ))}
-        </ol>
+        <div className="section-shell heritage-chronology-shell">
+          <ol className="heritage-chronology-list">
+            {milestones.map((item) => (
+              <li key={`${item.year}-${item.title}`}>
+                <div className="heritage-chronology-meta"><time>{item.year}</time><span>{item.region}</span></div>
+                <div className="heritage-chronology-copy"><h3>{item.title}</h3><p>{item.copy}</p></div>
+                <div className="heritage-chronology-source">
+                  {item.source ? <a href={item.source[1]} target="_blank" rel="noreferrer">{item.source[0]} <Arrow /></a> : <span>K2VOLT company milestone</span>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
       <section className="page-section heritage-sources">
         <div className="section-shell section-intro-grid">
