@@ -165,7 +165,7 @@ export default function Home() {
           <a className="inline-link" href="/news">View all news <Arrow /></a>
         </div>
         <div className="section-shell news-grid">
-          {news.map((item) => <NewsCard item={item} key={item.slug} />)}
+          {news.slice(0, 3).map((item) => <NewsCard item={item} key={item.slug} />)}
         </div>
       </section>
 

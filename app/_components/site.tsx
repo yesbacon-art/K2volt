@@ -114,9 +114,9 @@ export function NewsCard({ item }: { item: NewsItem }) {
   return (
     <article className="news-card">
       <a className="news-card-image" href={`/news/${item.slug}`}>
-        <img src={item.image} alt="" />
+        <img src={item.image} alt="" loading="lazy" decoding="async" />
       </a>
-      <p>{item.category} · {item.date}</p>
+      <p>{item.region} · {item.category} · {item.date}</p>
       <h3><a href={`/news/${item.slug}`}>{item.title}</a></h3>
       <span>{item.excerpt}</span>
       <a className="inline-link" href={`/news/${item.slug}`}>Read article <Arrow /></a>

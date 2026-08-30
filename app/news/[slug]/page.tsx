@@ -37,13 +37,19 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
         <div className="section-shell article-hero-inner">
           <p className="eyebrow"><span /> {item.category}</p>
           <h1>{item.title}</h1>
-          <p className="article-hero-meta">{item.date} · K2VOLT</p>
+          <p className="article-hero-meta">{item.region} · {item.date} · K2VOLT</p>
         </div>
       </section>
       <article className="article-body">
         <p className="article-lead">{item.excerpt}</p>
         <hr />
         {item.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        {item.source ? (
+          <aside className="article-source">
+            <span>Original source</span>
+            <a href={item.source.url} target="_blank" rel="noreferrer">{item.source.label} <Arrow /></a>
+          </aside>
+        ) : null}
         <hr />
         <a className="inline-link" href="/news">Back to news <Arrow /></a>
       </article>
