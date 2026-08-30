@@ -13,24 +13,28 @@ const leadershipTeam = [
     function: 'Executive leadership',
     role: 'President & Chief Executive Officer',
     bio: 'Guides K2VOLT’s long-term strategy, American market development, and commitment to dependable energy infrastructure.',
+    image: '/images/leadership/ceo-test.jpg',
   },
   {
     number: '02',
     function: 'Technology leadership',
     role: 'Chief Technology Officer',
     bio: 'Leads battery-system architecture, energy intelligence, product engineering, and the next generation of storage innovation.',
+    image: '/images/leadership/cto-test.jpg',
   },
   {
     number: '03',
     function: 'Operations leadership',
     role: 'Chief Operating Officer',
     bio: 'Builds the operating, manufacturing, quality, and supply capabilities required to deliver at every scale.',
+    image: '/images/leadership/coo-test.jpg',
   },
   {
     number: '04',
     function: 'Commercial leadership',
     role: 'Vice President, Business Development',
     bio: 'Develops strategic partnerships and connects K2VOLT solutions with residential, commercial, and utility customers.',
+    image: '/images/leadership/business-development-test.jpg',
   },
 ] as const;
 
@@ -79,9 +83,11 @@ export default function CompanyPage() {
             <article className="leadership-card" key={leader.number}>
               <div className="leadership-card-top">
                 <span className="leadership-number">{leader.number}</span>
-                <span className="leadership-status">Name &amp; portrait to be confirmed</span>
+                <span className="leadership-status">Fictional test portrait</span>
               </div>
-              <div className="leadership-monogram" aria-hidden="true">K2</div>
+              <div className="leadership-portrait">
+                <img src={leader.image} alt={`Fictional test portrait for ${leader.role}`} width="900" height="900" loading="lazy" decoding="async" />
+              </div>
               <p className="leadership-function">{leader.function}</p>
               <h3>{leader.role}</h3>
               <p className="leadership-bio">{leader.bio}</p>
