@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { solutions } from '../../_data/content';
 import { Arrow, PageFrame, PageHero, ProjectCTA } from '../../_components/site';
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!solution) return {};
   const image = new URL(solution.image, origin).toString();
   return {
-    title: `${solution.name} | ${solution.label} Energy Storage | K2VOLT`,
+    title: `${solution.name} | ${solution.label} Solutions | K2VOLT`,
     description: solution.summary,
     openGraph: { title: `${solution.name} | K2VOLT`, description: solution.summary, images: [{ url: image, alt: solution.alt }] },
     twitter: { card: 'summary_large_image', title: `${solution.name} | K2VOLT`, description: solution.summary, images: [image] },
@@ -32,7 +33,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
   return (
     <PageFrame>
       <PageHero
-        eyebrow={`${solution.label} energy storage`}
+        eyebrow={`${solution.label} solutions`}
         title={<>{solution.name}<br /><em>{solution.statement}</em></>}
         description={solution.summary}
         image={solution.image}
@@ -60,7 +61,7 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
               <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p></article>
             ))}
           </div>
-          <a className="inline-link" href="/solutions">View all energy-storage systems <Arrow /></a>
+          <Link className="inline-link" href="/solutions">View all K2VOLT systems <Arrow /></Link>
         </div>
       </section>
       <ProjectCTA />

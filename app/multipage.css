@@ -120,11 +120,12 @@
 .inline-link span { color: var(--green); font-size: 15px; }
 .home-solutions {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: clamp(28px, 3vw, 52px);
   margin-top: 100px;
 }
-.solution-preview { min-width: 0; padding-top: 18px; border-top: 1px solid #a9bbc3; }
+.solution-preview { grid-column: span 2; min-width: 0; padding-top: 18px; border-top: 1px solid #a9bbc3; }
+.solution-preview:nth-child(n+4) { grid-column: span 3; }
 .solution-preview-image { display: block; height: clamp(300px, 28vw, 440px); overflow: hidden; }
 .solution-preview-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
 .solution-preview:hover img { transform: scale(1.025); }
@@ -311,6 +312,7 @@
   .home-proof { padding-inline: 28px; }
   .home-intro-head, .home-heritage-grid, .home-technology-grid, .american-future-head, .company-future-intro, .leadership-heading, .news-archive-intro, .section-intro-grid, .split-section, .contact-layout { grid-template-columns: 1fr; gap: 55px; }
   .home-solutions, .news-grid { grid-template-columns: 1fr; }
+  .solution-preview, .solution-preview:nth-child(n+4) { grid-column: 1 / -1; }
   .solution-preview { display: grid; grid-template-columns: 46% 1fr; gap: 34px; }
   .solution-preview-image { height: 330px; }
   .solution-preview-copy > span { min-height: 0; }

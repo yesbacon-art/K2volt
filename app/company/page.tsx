@@ -3,7 +3,7 @@ import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
 
 const futurePriorities = [
   ['01', 'Research in America', 'Develop next-generation storage systems, controls, and operating intelligence around American customers and grid conditions.'],
-  ['02', 'Manufacturing capability', 'Expand the equipment, supplier, and production ecosystem needed to manufacture advanced energy-storage solutions in the United States.'],
+  ['02', 'Manufacturing capability', 'Expand the equipment, supplier, and production ecosystem needed to manufacture advanced storage, charging, and AIDC power solutions in the United States.'],
   ['03', 'Enduring energy investment', 'Build long-term partnerships and infrastructure that strengthen American resilience, industry, and energy independence.'],
 ] as const;
 
@@ -39,8 +39,8 @@ const leadershipTeam = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: 'About K2VOLT | American Energy Storage Company',
-  description: 'K2VOLT is an American-owned K2 Energy brand focused on intelligent stationary energy storage.',
+  title: 'About K2VOLT | American Energy Infrastructure Company',
+  description: 'K2VOLT is an American-owned K2 Energy brand focused on storage, charging, and AIDC power infrastructure.',
 };
 
 export default function CompanyPage() {
@@ -49,14 +49,14 @@ export default function CompanyPage() {
       <PageHero
         eyebrow="About K2VOLT"
         title={<>American energy.<br /><em>Ready for more.</em></>}
-        description="K2VOLT is an American-owned energy-storage company built to turn proven battery knowledge into dependable power at every scale."
+        description="K2VOLT is an American-owned energy company built to turn proven battery knowledge into dependable storage, charging, and mission-critical power infrastructure."
         image="/images/k2volt-utility.png"
         alt="K2VOLT energy storage infrastructure in the United States"
       />
       <section className="page-section">
         <div className="section-shell section-intro-grid">
           <div><p className="section-kicker">Our company</p><h2>A focused mission.<br />A proven foundation.</h2></div>
-          <div><p>K2VOLT is the stationary energy-storage brand of K2 Energy. We connect two decades of battery experience with modern energy management so American families, businesses, and power operators can decide when and how their energy works.</p></div>
+          <div><p>K2VOLT is the energy-infrastructure brand of K2 Energy. We connect two decades of battery experience with modern power electronics and energy management for American homes, businesses, charging networks, AI data centers, and the grid.</p></div>
         </div>
         <div className="section-shell capability-grid">
           <article><span>01</span><h3>Battery-first thinking</h3><p>Our system philosophy begins with cell behavior, safety, durability, and real-world operating conditions.</p></article>
@@ -67,7 +67,7 @@ export default function CompanyPage() {
       <section className="page-section page-section-dark">
         <div className="section-shell section-intro-grid">
           <div><p className="section-kicker section-kicker-dark">What we are here to do</p><h2>Make stored energy<br />more useful.</h2></div>
-          <div><p style={{ color: '#9db3be' }}>We design energy-storage systems that help customers strengthen resilience, use renewable energy more effectively, manage power costs, and support a more flexible grid.</p></div>
+          <div><p style={{ color: '#9db3be' }}>We design integrated energy systems that help customers strengthen resilience, electrify transportation, support high-density computing, manage power costs, and build a more flexible grid.</p></div>
         </div>
       </section>
       <section className="page-section company-leadership" id="leadership">
@@ -102,7 +102,7 @@ export default function CompanyPage() {
             <h2>Deep roots.<br />A long horizon.</h2>
           </div>
           <div>
-            <p className="company-future-lead">K2VOLT is an American pioneer in new-energy research and energy-storage equipment manufacturing.</p>
+            <p className="company-future-lead">K2VOLT is an American pioneer in new-energy research and advanced storage, charging, and AIDC power-equipment manufacturing.</p>
             <p>We are committed to deepening our presence in the United States—advancing technology, strengthening domestic manufacturing capability, and helping build the energy systems America will depend on for decades.</p>
           </div>
         </div>

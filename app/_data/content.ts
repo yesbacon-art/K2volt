@@ -47,6 +47,38 @@ export const solutions = [
       ['Lifecycle visibility', 'Maintain a clear view of system performance from commissioning through long-term operation.'],
     ],
   },
+  {
+    slug: 'ev-charging',
+    label: 'EV Charging',
+    name: 'K2 Charge',
+    statement: 'Fast charging. Smarter infrastructure.',
+    image: '/images/k2volt-ev-charging.png',
+    alt: 'K2VOLT battery-integrated EV fast-charging infrastructure at an American commercial site',
+    summary:
+      'Battery-integrated charging infrastructure designed to support high-power EV charging, manage site demand, and create a more flexible path to electrification.',
+    applications: ['Fleet and public charging', 'Battery-buffered fast charging', 'Solar and storage integration'],
+    capabilities: [
+      ['Charging and storage together', 'Coordinate charging equipment, battery storage, on-site generation, and the grid as one energy system.'],
+      ['Smarter site demand', 'Use stored energy to reduce charging peaks and better align infrastructure with available electrical capacity.'],
+      ['Built to expand', 'Deploy a modular platform that can grow with vehicle adoption, charging demand, and the needs of the site.'],
+    ],
+  },
+  {
+    slug: 'aidc-power',
+    label: 'AIDC Power Modules',
+    name: 'K2 AIDC',
+    statement: 'Resilient power for intelligence at scale.',
+    image: '/images/k2volt-aidc-power.png',
+    alt: 'K2VOLT modular battery-backed power infrastructure for an American AI data center',
+    summary:
+      'Modular battery-backed power infrastructure for AI data centers, designed around high-density loads, operational continuity, and clear energy visibility.',
+    applications: ['AI data-center continuity', 'High-density load support', 'On-site energy optimization'],
+    capabilities: [
+      ['Mission-critical architecture', 'Shape battery, power-conversion, and control layers around the continuity requirements of AI infrastructure.'],
+      ['Modular power blocks', 'Scale through repeatable equipment modules that support phased deployment and evolving compute demand.'],
+      ['Energy intelligence', 'Coordinate stored energy, facility demand, and available grid capacity through a connected operating layer.'],
+    ],
+  },
 ] as const;
 
 export const news = [
@@ -62,7 +94,7 @@ export const news = [
     paragraphs: [
       'K2VOLT was created to focus proven battery experience on one of America’s most important infrastructure opportunities: storing energy where and when it is needed.',
       'As a K2 Energy brand, K2VOLT builds on experience that began with lithium iron phosphate cells and expanded through packs, modules, and custom high-performance systems. The new brand brings that foundation into connected stationary storage for homes, businesses, and the grid.',
-      'The K2VOLT portfolio is organized around three application scales—residential, commercial and industrial, and utility—supported by a common approach to system intelligence, visibility, and lifecycle performance.',
+      'The K2VOLT portfolio now spans five applications—residential, commercial and industrial, utility, EV charging, and AIDC power—supported by a common approach to system intelligence, visibility, and lifecycle performance.',
     ],
     source: null,
   },

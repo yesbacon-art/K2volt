@@ -1,4 +1,5 @@
 import { news, solutions } from './_data/content';
+import Link from 'next/link';
 import {
   Arrow,
   NewsCard,
@@ -22,13 +23,13 @@ const k2Milestones = [
   {
     year: 'Today',
     title: 'K2VOLT advances the legacy',
-    copy: 'Twenty years of battery knowledge become a focused American platform for stationary energy storage.',
+    copy: 'Twenty years of battery knowledge become a focused American platform for critical energy infrastructure.',
   },
 ];
 
 const americanCommitments = [
   ['01', 'U.S. research & development', 'Advance battery systems, power electronics, controls, and energy intelligence for American operating needs.'],
-  ['02', 'Advanced equipment manufacturing', 'Build energy-storage equipment and manufacturing capability that support a stronger domestic energy industry.'],
+  ['02', 'Advanced equipment manufacturing', 'Build storage, charging, and power equipment capability that supports a stronger domestic energy industry.'],
   ['03', 'Long-term American growth', 'Invest in partnerships, technical talent, and infrastructure that deepen K2VOLT’s role in America’s energy future.'],
 ] as const;
 
@@ -45,19 +46,19 @@ export default function Home() {
         <div className="home-hero-wash" aria-hidden="true" />
         <div className="section-shell home-hero-inner">
           <p className="eyebrow"><span /> A K2 Energy brand · Battery innovation since 2006</p>
-          <h1>American energy storage.<br /><em>Built on proven battery science.</em></h1>
+          <h1>American energy systems.<br /><em>Built on proven battery science.</em></h1>
           <p>
-            K2VOLT brings two decades of cell, pack, and system expertise into
-            intelligent storage for homes, businesses, and the grid.
+            K2VOLT brings two decades of battery expertise into intelligent
+            energy systems for homes, businesses, charging, AI infrastructure, and the grid.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="/solutions">Explore energy storage <Arrow /></a>
-            <a className="button button-quiet" href="/heritage">Discover our heritage</a>
+            <Link className="button button-primary" href="/solutions">Explore solutions <Arrow /></Link>
+            <Link className="button button-quiet" href="/heritage">Discover our heritage</Link>
           </div>
         </div>
         <div className="home-proof">
           <div><strong>20+</strong><span>Years of battery expertise</span></div>
-          <div><strong>03</strong><span>Purpose-built platforms</span></div>
+          <div><strong>05</strong><span>Purpose-built platforms</span></div>
           <div><strong>01</strong><span>Connected energy ecosystem</span></div>
         </div>
       </section>
@@ -65,15 +66,15 @@ export default function Home() {
       <section className="home-intro">
         <div className="section-shell home-intro-head">
           <div>
-            <p className="section-kicker">Energy storage at every scale</p>
-            <h2>From one home<br />to the power grid.</h2>
+            <p className="section-kicker">Energy systems for critical applications</p>
+            <h2>From one home<br />to an AI data center.</h2>
           </div>
           <div>
             <p>
-              One battery heritage, expressed through three systems designed
-              around the way energy is produced, managed, and used.
+              One battery heritage, expressed through five platforms designed
+              around the way energy is produced, delivered, managed, and used.
             </p>
-            <a className="inline-link" href="/solutions">View all solutions <Arrow /></a>
+            <Link className="inline-link" href="/solutions">View all solutions <Arrow /></Link>
           </div>
         </div>
         <div className="section-shell home-solutions">
@@ -90,14 +91,14 @@ export default function Home() {
           <div className="home-heritage-copy">
             <img src="/images/k2-energy-logo.png" alt="K2 Energy" />
             <p className="section-kicker section-kicker-dark">The experience behind K2VOLT</p>
-            <h2>New energy storage.<br />Proven battery DNA.</h2>
+            <h2>New energy systems.<br />Proven battery DNA.</h2>
             <p>
               K2 Energy began developing lithium iron phosphate cells in Nevada
               in 2006 and expanded into packs, modules, and custom systems for
               demanding applications. K2VOLT advances that legacy into modern
-              stationary energy storage.
+              storage, charging, and mission-critical power infrastructure.
             </p>
-            <a className="inline-link inline-link-light" href="/heritage">Explore the K2 story <Arrow /></a>
+            <Link className="inline-link inline-link-light" href="/heritage">Explore the K2 story <Arrow /></Link>
           </div>
         </div>
         <div className="section-shell home-history-timeline" aria-label="K2 history milestones">
@@ -121,7 +122,7 @@ export default function Home() {
           <div>
             <p className="american-future-lead">
               K2VOLT is an American pioneer in new-energy research,
-              engineering, and energy-storage equipment manufacturing.
+              engineering, and advanced power-equipment manufacturing.
             </p>
             <p>
               Our long-term direction is clear: deepen technical capability,
@@ -140,7 +141,7 @@ export default function Home() {
           ))}
         </div>
         <div className="section-shell american-future-link">
-          <a className="inline-link" href="/company#american-future">Explore our American future <Arrow /></a>
+          <Link className="inline-link" href="/company#american-future">Explore our American future <Arrow /></Link>
         </div>
       </section>
 
@@ -154,7 +155,7 @@ export default function Home() {
             <article><span>01</span><h3>See clearly</h3><p>Energy flow, asset health, and performance in one operating view.</p></article>
             <article><span>02</span><h3>Act automatically</h3><p>Controls that respond to demand, solar production, tariffs, and priorities.</p></article>
             <article><span>03</span><h3>Scale confidently</h3><p>One connected philosophy from a single site to an energy portfolio.</p></article>
-            <a className="inline-link" href="/technology">Explore the platform <Arrow /></a>
+            <Link className="inline-link" href="/technology">Explore the platform <Arrow /></Link>
           </div>
         </div>
       </section>
@@ -162,7 +163,7 @@ export default function Home() {
       <section className="home-news">
         <div className="section-shell section-heading-row">
           <div><p className="section-kicker">News & perspectives</p><h2>From K2VOLT.</h2></div>
-          <a className="inline-link" href="/news">View all news <Arrow /></a>
+          <Link className="inline-link" href="/news">View all news <Arrow /></Link>
         </div>
         <div className="section-shell news-grid">
           {news.slice(0, 3).map((item) => <NewsCard item={item} key={item.slug} />)}

@@ -3,24 +3,24 @@ import { solutions } from '../_data/content';
 import { PageFrame, PageHero, ProjectCTA, SolutionPreview } from '../_components/site';
 
 export const metadata: Metadata = {
-  title: 'Energy Storage Solutions | K2VOLT',
-  description: 'Residential, commercial and industrial, and utility-scale energy storage from K2VOLT.',
+  title: 'Energy & Power Solutions | K2VOLT',
+  description: 'Residential, commercial, utility-scale, EV charging, and AIDC power solutions from K2VOLT.',
 };
 
 export default function SolutionsPage() {
   return (
     <PageFrame>
       <PageHero
-        eyebrow="Energy storage systems"
+        eyebrow="Energy and power systems"
         title={<>Built for the way<br />energy works.</>}
-        description="Purpose-built energy storage for American homes, commercial and industrial facilities, and the modern power grid."
+        description="Purpose-built energy systems for American homes, businesses, charging infrastructure, AI data centers, and the modern power grid."
         image="/images/k2volt-utility.png"
-        alt="K2VOLT energy storage systems across a renewable energy site"
+        alt="K2VOLT energy systems across a renewable energy site"
       />
       <section className="page-section">
         <div className="section-shell section-intro-grid">
-          <div><p className="section-kicker">One foundation, three scales</p><h2>The right system<br />for the application.</h2></div>
-          <div><p>K2VOLT combines battery-first engineering, modular system design, and connected controls in platforms shaped around each customer’s operating environment.</p></div>
+          <div><p className="section-kicker">One foundation, five applications</p><h2>The right system<br />for the application.</h2></div>
+          <div><p>K2VOLT combines battery-first engineering, power electronics, modular system design, and connected controls in platforms shaped around each customer’s operating environment.</p></div>
         </div>
         <div className="section-shell home-solutions">
           {solutions.map((solution) => <SolutionPreview solution={solution} key={solution.slug} />)}

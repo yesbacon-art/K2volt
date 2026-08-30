@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { news } from '../../_data/content';
 import { Arrow, PageFrame } from '../../_components/site';
@@ -51,7 +52,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
           </aside>
         ) : null}
         <hr />
-        <a className="inline-link" href="/news">Back to news <Arrow /></a>
+        <Link className="inline-link" href="/news">Back to news <Arrow /></Link>
       </article>
     </PageFrame>
   );

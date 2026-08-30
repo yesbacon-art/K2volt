@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
 
 export const metadata: Metadata = {
-  title: 'K2 Intelligence | Energy Storage Technology | K2VOLT',
-  description: 'Connected energy-storage controls and system intelligence from K2VOLT.',
+  title: 'K2 Intelligence | Energy Systems Technology | K2VOLT',
+  description: 'Connected controls and system intelligence for K2VOLT storage, charging, and AIDC power infrastructure.',
 };
 
 export default function TechnologyPage() {

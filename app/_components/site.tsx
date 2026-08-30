@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import { news, solutions, type NewsItem, type Solution } from '../_data/content';
 
 export const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -14,20 +15,20 @@ export function BrandMark() {
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand" href="/" aria-label="K2VOLT home">
+      <Link className="brand" href="/" aria-label="K2VOLT home">
         <BrandMark />
-      </a>
+      </Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
-        <a href="/solutions">Energy Storage</a>
-        <a href="/technology">Technology</a>
-        <a href="/heritage">K2 History</a>
-        <a href="/company">Company</a>
-        <a href="/company#american-future">U.S. Future</a>
-        <a href="/news">News</a>
+        <Link href="/solutions">Solutions</Link>
+        <Link href="/technology">Technology</Link>
+        <Link href="/heritage">K2 History</Link>
+        <Link href="/company">Company</Link>
+        <Link href="/company#american-future">U.S. Future</Link>
+        <Link href="/news">News</Link>
       </nav>
-      <a className="nav-cta" href="/contact">
+      <Link className="nav-cta" href="/contact">
         Talk to K2VOLT <Arrow />
-      </a>
+      </Link>
     </header>
   );
 }
@@ -37,23 +38,23 @@ export function SiteFooter() {
     <footer>
       <div className="section-shell footer-grid">
         <div className="footer-brand">
-          <a href="/" aria-label="K2VOLT home"><BrandMark /></a>
-          <p>A K2 Energy brand. American energy storage for a more resilient future.</p>
+          <Link href="/" aria-label="K2VOLT home"><BrandMark /></Link>
+          <p>A K2 Energy brand. American energy systems for a more resilient future.</p>
         </div>
         <div>
-          <strong>Energy Storage</strong>
+          <strong>Solutions</strong>
           {solutions.map((solution) => (
-            <a href={`/solutions/${solution.slug}`} key={solution.slug}>{solution.label}</a>
+            <Link href={`/solutions/${solution.slug}`} key={solution.slug}>{solution.label}</Link>
           ))}
         </div>
         <div>
           <strong>Company</strong>
-          <a href="/technology">Technology</a>
-          <a href="/heritage">K2 History</a>
-          <a href="/company">About K2VOLT</a>
-          <a href="/company#american-future">U.S. Future</a>
-          <a href="/news">News</a>
-          <a href="/contact">Contact</a>
+          <Link href="/technology">Technology</Link>
+          <Link href="/heritage">K2 History</Link>
+          <Link href="/company">About K2VOLT</Link>
+          <Link href="/company#american-future">U.S. Future</Link>
+          <Link href="/news">News</Link>
+          <Link href="/contact">Contact</Link>
         </div>
         <div className="footer-status">
           <span><i /> Battery innovation since 2006</span>
@@ -97,14 +98,14 @@ export function PageHero({
 export function SolutionPreview({ solution }: { solution: Solution }) {
   return (
     <article className="solution-preview">
-      <a className="solution-preview-image" href={`/solutions/${solution.slug}`}>
-        <img src={solution.image} alt={solution.alt} />
-      </a>
+      <Link className="solution-preview-image" href={`/solutions/${solution.slug}`}>
+        <img src={solution.image} alt={solution.alt} loading="lazy" decoding="async" />
+      </Link>
       <div className="solution-preview-copy">
         <p>{solution.label}</p>
         <h3>{solution.name}</h3>
         <span>{solution.summary}</span>
-        <a className="inline-link" href={`/solutions/${solution.slug}`}>View system <Arrow /></a>
+        <Link className="inline-link" href={`/solutions/${solution.slug}`}>View system <Arrow /></Link>
       </div>
     </article>
   );
@@ -113,13 +114,13 @@ export function SolutionPreview({ solution }: { solution: Solution }) {
 export function NewsCard({ item }: { item: NewsItem }) {
   return (
     <article className="news-card">
-      <a className="news-card-image" href={`/news/${item.slug}`}>
+      <Link className="news-card-image" href={`/news/${item.slug}`}>
         <img src={item.image} alt="" loading="lazy" decoding="async" />
-      </a>
+      </Link>
       <p>{item.region} · {item.category} · {item.date}</p>
-      <h3><a href={`/news/${item.slug}`}>{item.title}</a></h3>
+      <h3><Link href={`/news/${item.slug}`}>{item.title}</Link></h3>
       <span>{item.excerpt}</span>
-      <a className="inline-link" href={`/news/${item.slug}`}>Read article <Arrow /></a>
+      <Link className="inline-link" href={`/news/${item.slug}`}>Read article <Arrow /></Link>
     </article>
   );
 }
@@ -138,8 +139,8 @@ export function ProjectCTA() {
       <div className="section-shell project-cta-inner">
         <p className="section-kicker">Start a conversation</p>
         <h2>Let&apos;s build what<br />powers next.</h2>
-        <p>Tell us about your home, facility, or energy project. We&apos;ll help you identify the right place to start.</p>
-        <a className="button button-primary" href="/contact">Talk to K2VOLT <Arrow /></a>
+        <p>Tell us about your home, facility, charging, data-center, or grid project. We&apos;ll help you identify the right place to start.</p>
+        <Link className="button button-primary" href="/contact">Talk to K2VOLT <Arrow /></Link>
       </div>
     </section>
   );

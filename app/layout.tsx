@@ -7,23 +7,23 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ??
       'https://k2volt-energy.yesbacon130976.chatgpt.site',
   ),
-  title: 'K2VOLT | 20 Years of Battery Expertise, Built for Energy Storage',
+  title: 'K2VOLT | 20 Years of Battery Expertise, Built for Energy Infrastructure',
   description:
-    'A K2 Energy brand bringing two decades of battery expertise to residential, commercial, industrial, and utility-scale energy storage.',
+    'A K2 Energy brand bringing two decades of battery expertise to energy storage, EV charging, and AIDC power infrastructure.',
   icons: {
     icon: '/images/k2volt-logo-official.png',
   },
   openGraph: {
     title: 'K2VOLT | Proven Battery DNA. Built for What’s Next.',
     description:
-      'A K2 Energy brand bringing 20 years of battery expertise to American homes, businesses, and the grid.',
+      'A K2 Energy brand bringing 20 years of battery expertise to American homes, businesses, charging infrastructure, AI data centers, and the grid.',
     type: 'website',
     images: [
       {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'K2VOLT energy storage — Power that keeps life moving.',
+        alt: 'K2VOLT energy infrastructure — Power that keeps life moving.',
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'K2VOLT | Proven Battery DNA. Built for What’s Next.',
     description:
-      'A K2 Energy brand bringing 20 years of battery expertise to American homes, businesses, and the grid.',
+      'A K2 Energy brand bringing 20 years of battery expertise to American homes, businesses, charging infrastructure, AI data centers, and the grid.',
     images: ['/og.png'],
   },
 };

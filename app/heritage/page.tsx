@@ -62,7 +62,7 @@ const milestones = [
     year: '2026',
     region: 'United States',
     title: 'K2VOLT focuses the next chapter',
-    copy: 'K2VOLT brings this cell-to-system experience into a dedicated stationary-storage platform for American homes, commercial and industrial facilities, and utility-scale infrastructure.',
+    copy: 'K2VOLT brings this cell-to-system experience into a dedicated American platform spanning stationary storage, EV charging, and AIDC power infrastructure.',
     source: null,
   },
 ] as const;
@@ -85,7 +85,7 @@ export default function HeritagePage() {
       <PageHero
         eyebrow="K2 Energy heritage"
         title={<>Twenty years of<br /><em>battery engineering.</em></>}
-        description="K2VOLT is the stationary energy-storage chapter of a battery story that began in Nevada in 2006."
+        description="K2VOLT is the energy-infrastructure chapter of a battery story that began in Nevada in 2006."
         image="/images/k2-energy-legacy-cell.png"
         alt="K2 Energy lithium iron phosphate battery from the company product heritage"
       />
@@ -97,7 +97,7 @@ export default function HeritagePage() {
             <p className="section-kicker">The experience behind K2VOLT</p>
             <h2>A new chapter in<br />a proven story.</h2>
             <p>K2 Energy began developing commercial lithium iron phosphate cells and expanded into packs, modules, and custom high-performance battery systems serving demanding applications.</p>
-            <p>That cell-to-system perspective now informs K2VOLT’s approach to residential, commercial, industrial, and utility-scale stationary storage.</p>
+            <p>That cell-to-system perspective now informs K2VOLT’s approach to stationary storage, EV charging, and mission-critical AIDC power infrastructure.</p>
             <a className="inline-link" href="https://k2energysolutions.com/" target="_blank" rel="noreferrer">Visit K2 Energy <Arrow /></a>
           </div>
         </div>
