@@ -302,15 +302,16 @@
 .company-store-heading h2 { color: white; }
 .company-store-heading > div:last-child p { color: #9db3be; font-size: 15px; line-height: 1.75; }
 .company-store-heading .company-store-lead { margin-top: 0; color: #e2edf1; font-size: 22px; line-height: 1.55; letter-spacing: -.015em; }
-.company-store-visual { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(280px,.55fr); margin-top: 86px; }
-.company-store-visual figure { min-width: 0; margin: 0; background: #0b3148; }
-.company-store-visual figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.company-store-visual figcaption { padding: 15px 18px 17px; color: #7894a1; font-size: 8px; font-weight: 680; letter-spacing: .1em; text-transform: uppercase; }
-.company-store-visual aside { padding: clamp(42px,5vw,76px); display: flex; flex-direction: column; justify-content: center; background: #0a344c; border-left: 1px solid rgba(255,255,255,.12); }
+.company-store-visual { position: relative; aspect-ratio: 2 / 1; margin-top: 86px; overflow: hidden; background: #0b3148; }
+.company-store-visual figure { position: absolute; inset: 0; min-width: 0; margin: 0; }
+.company-store-visual figure:after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(4,35,53,0) 40%,rgba(4,35,53,.26) 56%,rgba(4,35,53,.94) 100%); pointer-events: none; }
+.company-store-visual figure img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.company-store-visual figcaption { position: absolute; z-index: 2; left: 20px; bottom: 16px; padding: 9px 12px; color: rgba(255,255,255,.7); background: rgba(4,35,53,.46); font-size: 8px; font-weight: 680; letter-spacing: .1em; text-transform: uppercase; backdrop-filter: blur(8px); }
+.company-store-visual aside { position: absolute; z-index: 3; inset: 0 0 0 auto; width: min(43%,620px); padding: clamp(34px,4vw,70px); display: flex; flex-direction: column; justify-content: center; }
 .company-store-visual aside > p { margin: 0; color: #9db3be; font-size: 9px; font-weight: 720; letter-spacing: .15em; text-transform: uppercase; }
-.company-store-visual aside strong { margin: 42px 0 20px; color: #62e89a; font-size: clamp(104px,10vw,158px); line-height: .72; letter-spacing: -.08em; font-weight: 260; }
+.company-store-visual aside strong { margin: 32px 0 16px; color: #62e89a; font-size: clamp(90px,8vw,132px); line-height: .72; letter-spacing: -.08em; font-weight: 260; }
 .company-store-visual aside > span { max-width: 250px; color: white; font-size: 22px; line-height: 1.35; letter-spacing: -.025em; }
-.company-store-visual aside small { max-width: 300px; margin-top: 42px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.16); color: #7894a1; font-size: 9px; line-height: 1.7; }
+.company-store-visual aside small { max-width: 300px; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.2); color: #9db3be; font-size: 9px; line-height: 1.7; }
 .company-store-model { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 72px; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); }
 .company-store-model article { min-height: 250px; padding: 28px clamp(24px,2.5vw,40px) 34px 0; }
 .company-store-model article + article { padding-left: clamp(24px,2.5vw,40px); border-left: 1px solid rgba(255,255,255,.18); }
@@ -360,8 +361,9 @@
   .leadership-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .leadership-card:nth-child(3) { padding-left: 0; border-left: 0; border-top: 1px solid #cad6da; }
   .leadership-card:nth-child(4) { border-top: 1px solid #cad6da; }
-  .company-store-visual { grid-template-columns: 1fr; }
-  .company-store-visual aside { border-left: 0; border-top: 1px solid rgba(255,255,255,.12); }
+  .company-store-visual { aspect-ratio: 4 / 3; }
+  .company-store-visual figure:after { background: linear-gradient(90deg,rgba(4,35,53,.04) 18%,rgba(4,35,53,.36) 50%,rgba(4,35,53,.95) 100%); }
+  .company-store-visual aside { width: 54%; }
   .company-store-model { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .company-store-model article:nth-child(3) { padding-left: 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.18); }
   .company-store-model article:nth-child(4) { border-top: 1px solid rgba(255,255,255,.18); }
@@ -405,9 +407,14 @@
   .leadership-card + .leadership-card { border-top: 1px solid #cad6da; }
   .leadership-portrait { aspect-ratio: 1.3 / 1; }
   .leadership-card h3 { min-height: 0; }
-  .company-store-visual { margin-top: 58px; }
-  .company-store-visual aside { padding: 42px 28px; }
-  .company-store-visual aside strong { margin-top: 36px; }
+  .company-store-visual { aspect-ratio: 4 / 5; margin-top: 58px; }
+  .company-store-visual figure:after { background: linear-gradient(180deg,rgba(4,35,53,.02) 18%,rgba(4,35,53,.5) 48%,rgba(4,35,53,.98) 100%); }
+  .company-store-visual figure img { object-position: center 42%; }
+  .company-store-visual figcaption { left: 14px; bottom: auto; top: 14px; max-width: calc(100% - 28px); line-height: 1.45; }
+  .company-store-visual aside { inset: auto 0 0; width: 100%; padding: 36px 28px 34px; justify-content: flex-end; }
+  .company-store-visual aside strong { margin: 26px 0 14px; font-size: 94px; }
+  .company-store-visual aside > span { font-size: 19px; }
+  .company-store-visual aside small { margin-top: 22px; padding-top: 17px; }
   .company-store-model { grid-template-columns: 1fr; margin-top: 48px; }
   .company-store-model article, .company-store-model article + article { min-height: 0; padding: 28px 0 34px; border-left: 0; }
   .company-store-model article + article { border-top: 1px solid rgba(255,255,255,.18); }
