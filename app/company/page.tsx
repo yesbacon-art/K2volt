@@ -7,6 +7,13 @@ const futurePriorities = [
   ['03', 'Enduring energy investment', 'Build long-term partnerships and infrastructure that strengthen American resilience, industry, and energy independence.'],
 ] as const;
 
+const storeModel = [
+  ['01', 'Sales', 'Explore residential storage, commercial systems, charging equipment, and integrated power solutions in one destination.'],
+  ['02', 'Solutions', 'Work with K2VOLT specialists to shape a system around the site, load profile, resilience goals, and future growth.'],
+  ['03', 'Service', 'Coordinate installation, commissioning, maintenance, and lifecycle care through a connected local service experience.'],
+  ['04', 'Support', 'Access product guidance, operating insight, upgrades, and dependable assistance throughout the system life.'],
+] as const;
+
 const leadershipTeam = [
   {
     number: '01',
@@ -91,6 +98,39 @@ export default function CompanyPage() {
               <p className="leadership-function">{leader.function}</p>
               <h3>{leader.role}</h3>
               <p className="leadership-bio">{leader.bio}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="page-section company-store-network" id="store-network">
+        <div className="section-shell company-store-heading">
+          <div>
+            <p className="section-kicker section-kicker-dark">Future U.S. retail &amp; service network</p>
+            <h2>Power, experienced<br />in person.</h2>
+          </div>
+          <div>
+            <p className="company-store-lead">K2VOLT envisions a nationwide network of energy experience and service centers—an American power-industry interpretation of the 4S model.</p>
+            <p>Each location is intended to bring product discovery, system planning, installation coordination, and long-term service together for homeowners, businesses, fleets, and energy partners.</p>
+          </div>
+        </div>
+        <div className="section-shell company-store-visual">
+          <figure>
+            <img src="/images/k2volt-us-store-network-concept.png" alt="Concept visualization of a future K2VOLT energy experience and service center in the United States" width="2048" height="1536" loading="lazy" decoding="async" />
+            <figcaption>Concept visualization · Proposed K2VOLT U.S. energy experience and service center</figcaption>
+          </figure>
+          <aside>
+            <p>Long-term U.S. ambition</p>
+            <strong>100</strong>
+            <span>potential energy experience and service locations</span>
+            <small>This is a forward-looking network goal. Expansion would be phased over time and shaped by market demand, partners, and local development.</small>
+          </aside>
+        </div>
+        <div className="section-shell company-store-model">
+          {storeModel.map(([number, title, copy]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{copy}</p>
             </article>
           ))}
         </div>
