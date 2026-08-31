@@ -311,7 +311,8 @@
 .company-store-visual aside > p { margin: 0; color: #9db3be; font-size: 9px; font-weight: 720; letter-spacing: .15em; text-transform: uppercase; }
 .company-store-visual aside strong { margin: 32px 0 16px; color: #62e89a; font-size: clamp(90px,8vw,132px); line-height: .72; letter-spacing: -.08em; font-weight: 260; }
 .company-store-visual aside > span { max-width: 250px; color: white; font-size: 22px; line-height: 1.35; letter-spacing: -.025em; }
-.company-store-visual aside small { max-width: 300px; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.2); color: #9db3be; font-size: 9px; line-height: 1.7; }
+.company-store-visual aside small { position: relative; max-width: 300px; margin-top: 30px; padding-top: 20px; color: #9db3be; font-size: 9px; line-height: 1.7; }
+.company-store-visual aside small:before { content: ''; position: absolute; inset: 0 0 auto; height: 1px; background: linear-gradient(90deg,rgba(255,255,255,.86),rgba(255,255,255,.38) 58%,rgba(255,255,255,0)); }
 .company-store-model { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin-top: 72px; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); }
 .company-store-model article { min-height: 250px; padding: 28px clamp(24px,2.5vw,40px) 34px 0; }
 .company-store-model article + article { padding-left: clamp(24px,2.5vw,40px); border-left: 1px solid rgba(255,255,255,.18); }
