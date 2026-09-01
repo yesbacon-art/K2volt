@@ -273,7 +273,7 @@ h1 em {
 }
 
 /* Solutions */
-.intro-section { padding: clamp(102px, 10vw, 155px) 0 110px; background: white; }
+.intro-section { padding: clamp(86px, 8vw, 125px) 0 80px; background: white; }
 .intro-grid {
   display: grid;
   grid-template-columns: 1.25fr .75fr;
@@ -393,7 +393,7 @@ h1 em {
 
 /* K2 heritage */
 .heritage-section {
-  padding: clamp(102px, 10vw, 155px) 0 110px;
+  padding: clamp(86px, 8vw, 125px) 0 80px;
   overflow: hidden;
   background: #06253a;
   color: white;
@@ -503,7 +503,7 @@ h1 em {
 .platform-section {
   position: relative;
   overflow: hidden;
-  padding: clamp(105px, 10.5vw, 165px) 0;
+  padding: clamp(88px, 8vw, 130px) 0;
   background: #f7fafb;
 }
 .platform-orb {
@@ -611,7 +611,7 @@ h1 em {
 .site-status small { color: #587585; font-size: 7px; }
 
 /* Company and delivery */
-.company-section { padding: clamp(105px, 10.5vw, 165px) 0 115px; }
+.company-section { padding: clamp(88px, 8vw, 130px) 0 85px; }
 .company-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12vw; }
 .company-copy { padding-top: 40px; color: #5d7481; font-size: 14px; line-height: 1.78; }
 .company-copy .company-lead { margin-top: 0; color: var(--navy); font-size: 21px; line-height: 1.55; }
@@ -621,7 +621,7 @@ h1 em {
 .values-row span { color: var(--green); font-size: 9px; }
 .values-row h3 { margin: 76px 0 14px; font-size: 17px; font-weight: 560; }
 .values-row p { margin: 0; color: #607782; font-size: 12px; line-height: 1.65; }
-.process-section { padding: 105px 0 115px; background: #eef4f5; }
+.process-section { padding: 88px 0 95px; background: #eef4f5; }
 .process-head { display: grid; grid-template-columns: 1.35fr .65fr; gap: 9vw; }
 .process-head .section-kicker { grid-column: 1/-1; }
 .process-head > p:last-child { align-self: end; margin: 0 0 7px; color: #617985; font-size: 14px; line-height: 1.72; }
@@ -637,7 +637,7 @@ h1 em {
 .contact-section {
   position: relative;
   overflow: hidden;
-  padding: 120px 0 130px;
+  padding: 100px 0 110px;
   background: linear-gradient(120deg, #e5f3f6, #f8fbfb 58%, #e8f6ee);
 }
 .contact-section:after { content: ''; position: absolute; right: 4%; top: 50%; width: 480px; height: 480px; transform: translateY(-50%); border-radius: 50%; background: radial-gradient(circle,rgba(20,184,102,.13),rgba(7,133,200,.06) 45%,transparent 70%); }
