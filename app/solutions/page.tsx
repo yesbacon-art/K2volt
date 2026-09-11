@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { solutions } from '../_data/content';
+import { productCatalog, solutions } from '../_data/content';
 import { PageFrame, PageHero, ProjectCTA, SolutionPreview } from '../_components/site';
 
 export const metadata: Metadata = {
@@ -24,6 +24,20 @@ export default function SolutionsPage() {
         </div>
         <div className="section-shell home-solutions">
           {solutions.map((solution) => <SolutionPreview solution={solution} key={solution.slug} />)}
+        </div>
+      </section>
+      <section className="page-section product-catalog-section">
+        <div className="section-shell">
+          <p className="section-kicker">K2VOLT product catalog</p>
+          <h2>One portfolio.<br />Every scale of energy.</h2>
+          <div className="product-catalog-grid">
+            {productCatalog.map((product, index) => (
+              <article className="product-catalog-card" key={product.name}>
+                <div className="product-catalog-image"><img src={product.image} alt={`${product.name} K2VOLT energy product`} loading="lazy" /><span className="product-brand-badge">K2VOLT</span></div>
+                <div className="product-catalog-copy"><span>0{index + 1}</span><p>{product.category}</p><h3>{product.name}</h3><small>{product.spec}</small></div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
       <section className="page-section page-section-soft">
