@@ -82,19 +82,19 @@ export const solutions = [
 ] as const;
 
 export const productCatalog = [
-  { category: 'Residential storage', name: 'K2 Home 1.0', spec: '1.0 kWh portable LiFePO₄ power station', image: '/images/refu-products/volta-1.png' },
-  { category: 'Residential storage', name: 'K2 Home 2.0', spec: '2.0 kWh portable home backup', image: '/images/refu-products/portable-2kwh.png' },
-  { category: 'Residential storage', name: 'K2 Home 3.0', spec: '3.0 kWh portable home backup', image: '/images/refu-products/home-3.png' },
-  { category: 'Residential storage', name: 'K2 Home 5', spec: '5.12 kWh modular home battery', image: '/images/refu-products/home-5.png' },
-  { category: 'Residential storage', name: 'K2 Home 16', spec: '16 kWh scalable home storage', image: '/images/refu-products/home-16.png' },
-  { category: 'Commercial & industrial', name: 'K2 Business 112', spec: '50 kW / 112.53 kWh C&I cabinet', image: '/images/refu-products/pro-112.png' },
-  { category: 'Commercial & industrial', name: 'K2 Business 261', spec: '125 kW / 261 kWh C&I cabinet', image: '/images/refu-products/pro-261.png' },
-  { category: 'Commercial & industrial', name: 'K2 Business 522', spec: '250 kW / 522 kWh C&I cabinet', image: '/images/refu-products/pro-522.png' },
-  { category: 'Utility-scale storage', name: 'K2 Grid 5', spec: '5.016 MWh liquid-cooled BESS', image: '/images/refu-products/grid-5.png' },
-  { category: 'EV charging', name: 'K2 Charge 60', spec: '60 kW dual-connector DC charger', image: '/images/refu-products/charger-60.png' },
-  { category: 'EV charging', name: 'K2 Charge 80', spec: '80 kW dual-connector DC charger', image: '/images/refu-products/charger-80.png' },
-  { category: 'EV charging', name: 'K2 Charge 120', spec: '120 kW dual-connector DC charger', image: '/images/refu-products/charger-120.png' },
-  { category: 'AIDC power', name: 'K2 Energy OS', spec: 'Connected energy control layer for AI infrastructure', image: '/images/refu-products/energy-os.png' },
+  { slug: 'home-1', category: 'Residential storage', name: 'K2 Home 1.0', spec: '1.0 kWh portable LiFePO₄ power station', image: '/images/refu-products/volta-1.png' },
+  { slug: 'home-2', category: 'Residential storage', name: 'K2 Home 2.0', spec: '2.0 kWh portable home backup', image: '/images/refu-products/portable-2kwh.png' },
+  { slug: 'home-3', category: 'Residential storage', name: 'K2 Home 3.0', spec: '3.0 kWh portable home backup', image: '/images/refu-products/home-3.png' },
+  { slug: 'home-5', category: 'Residential storage', name: 'K2 Home 5', spec: '5.12 kWh modular home battery', image: '/images/refu-products/home-5.png' },
+  { slug: 'home-16', category: 'Residential storage', name: 'K2 Home 16', spec: '16 kWh scalable home storage', image: '/images/refu-products/home-16.png' },
+  { slug: 'business-112', category: 'Commercial & industrial', name: 'K2 Business 112', spec: '50 kW / 112.53 kWh C&I cabinet', image: '/images/refu-products/pro-112.png' },
+  { slug: 'business-261', category: 'Commercial & industrial', name: 'K2 Business 261', spec: '125 kW / 261 kWh C&I cabinet', image: '/images/refu-products/pro-261.png' },
+  { slug: 'business-522', category: 'Commercial & industrial', name: 'K2 Business 522', spec: '250 kW / 522 kWh C&I cabinet', image: '/images/refu-products/pro-522.png' },
+  { slug: 'grid-5', category: 'Utility-scale storage', name: 'K2 Grid 5', spec: '5.016 MWh liquid-cooled BESS', image: '/images/refu-products/grid-5.png' },
+  { slug: 'charge-60', category: 'EV charging', name: 'K2 Charge 60', spec: '60 kW dual-connector DC charger', image: '/images/refu-products/charger-60.png' },
+  { slug: 'charge-80', category: 'EV charging', name: 'K2 Charge 80', spec: '80 kW dual-connector DC charger', image: '/images/refu-products/charger-80.png' },
+  { slug: 'charge-120', category: 'EV charging', name: 'K2 Charge 120', spec: '120 kW dual-connector DC charger', image: '/images/refu-products/charger-120.png' },
+  { slug: 'energy-os', category: 'AIDC power', name: 'K2 Energy OS', spec: 'Connected energy control layer for AI infrastructure', image: '/images/refu-products/energy-os.png' },
 ] as const;
 
 export const news = [
