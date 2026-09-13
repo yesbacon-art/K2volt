@@ -34,7 +34,7 @@ export default function SolutionsPage() {
           <div className="product-catalog-grid">
             {productCatalog.map((product, index) => (
               <article className="product-catalog-card" key={product.name}>
-                <div className="product-catalog-image"><img src={product.image} alt={`${product.name} K2VOLT energy product`} loading="lazy" /><span className="product-brand-badge"><img src="/images/k2volt-logo-official.png" alt="K2VOLT" /></span></div>
+                <div className="product-catalog-image"><img src={product.image} alt={`${product.name} K2VOLT energy product`} loading="lazy" /></div>
                 <Link href={`/products/${product.slug}`} className="product-catalog-copy"><span>0{index + 1}</span><p>{product.category}</p><h3>{product.name}</h3><small>{product.spec}</small><b>View product ↗</b></Link>
               </article>
             ))}
