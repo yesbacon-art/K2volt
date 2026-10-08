@@ -21,10 +21,10 @@ export default function Home() {
         <div className="home-hero-wash" aria-hidden="true" />
         <div className="section-shell home-hero-inner">
           <p className="eyebrow"><span /> A K2 Energy brand · Battery innovation since 2006</p>
-          <h1>Energy.<br /><em>Ready for what’s next.</em></h1>
+          <h1>Energy.<br /><em>Engineered forward.</em></h1>
           <p>
-            Battery heritage meets a new generation of storage, charging and
-            energy systems for America.
+            American battery heritage. Storage, charging and energy controls
+            shaped around the way you use power.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/products">Explore products</Link>
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-intro">
+      <section className="home-intro" id="applications">
         <div className="section-shell home-intro-head">
           <div>
             <p className="section-kicker">One portfolio. Different demands.</p>
@@ -52,8 +52,12 @@ export default function Home() {
             <Link className="inline-link" href="/products">Browse the product catalog</Link>
           </div>
         </div>
-        <div className="section-shell home-solutions">
-          {solutions.map((solution) => <SolutionPreview solution={solution} key={solution.slug} />)}
+        <div className="section-shell home-storage-showcase">
+          {solutions.filter(solution => ['residential', 'commercial-industrial', 'utility-scale'].includes(solution.slug)).map(solution => <SolutionPreview solution={solution} key={solution.slug} />)}
+        </div>
+        <div className="section-shell home-infrastructure-heading"><p className="section-kicker">Beyond stationary storage</p><h3>Charging infrastructure.<br />The intelligence to connect it.</h3></div>
+        <div className="section-shell home-infrastructure-showcase">
+          {solutions.filter(solution => ['ev-charging', 'aidc-power'].includes(solution.slug)).map(solution => <SolutionPreview solution={solution} key={solution.slug} />)}
         </div>
       </section>
 
@@ -77,23 +81,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-technology">
+      <section className="home-technology" id="system-approach">
         <div className="section-shell home-technology-grid">
           <div>
             <p className="section-kicker">A system-level approach</p>
             <h2>Power hardware.<br />Operating intelligence.</h2>
-            <p className="refined-section-lead">Start with the battery. Plan the power conversion, controls and site integration around the way the system will operate.</p>
+            <p className="refined-section-lead">Energy capacity, power delivery and operating control are different decisions. Plan them together around the site—not around an enclosure alone.</p>
           </div>
           <div className="technology-points">
-            <article><span>01</span><h3>Battery systems</h3><p>Capacity and power configurations matched to the application.</p></article>
-            <article><span>02</span><h3>Energy visibility</h3><p>A connected view of assets and operating priorities.</p></article>
-            <article><span>03</span><h3>Project integration</h3><p>Site requirements, compatibility and service scope defined together.</p></article>
+            <article><span>01</span><h3>Energy capacity</h3><p>Match the stored energy to the load profile and intended operating duration.</p></article>
+            <article><span>02</span><h3>Power delivery</h3><p>Define the electrical interfaces and equipment around the site’s power requirements.</p></article>
+            <article><span>03</span><h3>Operating control</h3><p>Confirm asset visibility, control permissions and integration responsibilities.</p></article>
             <Link className="inline-link" href="/technology">Explore our approach</Link>
           </div>
         </div>
       </section>
 
-      <section className="home-network-preview"><div className="section-shell home-network-grid"><img src="/images/k2volt-us-store-network-concept.webp" alt="Concept of a future K2VOLT U.S. energy experience and service center" loading="lazy" width="2048" height="1536" /><div><p className="section-kicker">Our American horizon</p><h2>Closer to the people<br />who use energy.</h2><p>Our long-term ambition is a U.S. network of energy experience and service centers, bringing product discovery, project planning and lifecycle support closer to customers.</p><p className="network-planning-note">Concept visualization · A future network plan, not an existing store count.</p><Link className="inline-link" href="/company#store-network">Discover the U.S. network vision</Link></div></div></section>
+      <section className="home-network-preview"><div className="section-shell home-network-grid"><figure><img src="/images/k2volt-us-store-network-concept.webp" alt="Concept of a future K2VOLT U.S. energy experience and service center" loading="lazy" decoding="async" width="2048" height="1536" /><figcaption>Future U.S. experience &amp; service center · concept visualization</figcaption></figure><div><p className="section-kicker">Our American horizon</p><h2>Closer to the people<br />who use energy.</h2><p>Our long-term ambition is a U.S. network of energy experience and service centers, bringing product discovery, project planning and lifecycle support closer to customers.</p><p className="network-planning-note">A phased development vision—not an existing store count.</p><Link className="inline-link" href="/company#store-network">Discover the U.S. network vision</Link></div></div></section>
 
       <section className="home-news">
         <div className="section-shell section-heading-row">

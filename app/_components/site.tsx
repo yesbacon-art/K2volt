@@ -41,7 +41,9 @@ export function SiteFooter() {
           <Link href="/contact">Contact</Link>
         </div>
         <div className="footer-status">
-          <span><i /> Battery innovation since 2006</span>
+          <strong>Start a conversation</strong>
+          <a href="mailto:hello@k2volt.com">hello@k2volt.com</a>
+          <span>Battery innovation since 2006</span>
           <span>© 2026 K2VOLT · A K2 Energy brand</span>
         </div>
       </div>
@@ -89,7 +91,7 @@ export function SolutionPreview({ solution }: { solution: Solution }) {
         <p>{solution.label}</p>
         <h3>{solution.name}</h3>
         <span>{solution.summary}</span>
-        <Link className="inline-link" href={`/solutions/${solution.slug}`}>View system <Arrow /></Link>
+        <Link className="inline-link" href={`/solutions/${solution.slug}`}>Explore the application</Link>
       </div>
     </article>
   );
@@ -107,10 +109,8 @@ export function ProjectCTA() {
   return (
     <section className="project-cta">
       <div className="section-shell project-cta-inner">
-        <p className="section-kicker">Start a conversation</p>
-        <h2>Let&apos;s build what<br />powers next.</h2>
-        <p>Tell us about your home, facility, charging, data-center, or grid project. We&apos;ll help you identify the right place to start.</p>
-        <Link className="button button-primary" href="/contact">Talk to K2VOLT <Arrow /></Link>
+        <div><p className="section-kicker">Start a conversation</p><h2>Your next energy<br />project starts here.</h2></div>
+        <div className="project-cta-action"><p>Share the application, location and operating goals. Start a discussion around the right configuration for your site.</p><Link className="button button-primary" href="/contact">Talk to K2VOLT</Link></div>
       </div>
     </section>
   );
