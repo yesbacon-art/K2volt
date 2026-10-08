@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { productCatalog, solutions } from '../_data/content';
+import { solutions } from '../_data/content';
 import { PageFrame, PageHero, ProjectCTA, SolutionPreview } from '../_components/site';
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function SolutionsPage() {
         eyebrow="Energy and power systems"
         title={<>Built for the way<br />energy works.</>}
         description="Purpose-built energy systems for American homes, businesses, charging infrastructure, AI data centers, and the modern power grid."
-        image="/images/k2volt-utility.png"
+        image="/images/k2volt-utility.webp"
         alt="K2VOLT energy systems across a renewable energy site"
       />
       <section className="page-section">
@@ -27,18 +27,12 @@ export default function SolutionsPage() {
           {solutions.map((solution) => <SolutionPreview solution={solution} key={solution.slug} />)}
         </div>
       </section>
-      <section className="page-section product-catalog-section">
+      <section className="page-section product-catalog-section" id="products">
         <div className="section-shell">
           <p className="section-kicker">K2VOLT product catalog</p>
           <h2>One portfolio.<br />Every scale of energy.</h2>
-          <div className="product-catalog-grid">
-            {productCatalog.map((product, index) => (
-              <article className="product-catalog-card" key={product.name}>
-                <div className="product-catalog-image"><img src={product.image} alt={`${product.name} K2VOLT energy product`} loading="lazy" /></div>
-                <Link href={`/products/${product.slug}`} className="product-catalog-copy"><span>0{index + 1}</span><p>{product.category}</p><h3>{product.name}</h3><small>{product.spec}</small><b>View product ↗</b></Link>
-              </article>
-            ))}
-          </div>
+          <p className="refined-section-lead">Compare home batteries, commercial cabinets, grid-scale storage, chargers and energy controls in the dedicated product catalog.</p>
+          <Link className="button button-primary" href="/products">Explore the product catalog</Link>
         </div>
       </section>
       <section className="page-section page-section-soft">

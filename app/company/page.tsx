@@ -57,7 +57,7 @@ export default function CompanyPage() {
         eyebrow="About K2VOLT"
         title={<>American energy.<br /><em>Ready for more.</em></>}
         description="K2VOLT is an American-owned energy company built to turn proven battery knowledge into dependable storage, charging, and mission-critical power infrastructure."
-        image="/images/k2volt-utility.png"
+        image="/images/k2volt-utility.webp"
         alt="K2VOLT energy storage infrastructure in the United States"
       />
       <section className="page-section">
@@ -115,7 +115,7 @@ export default function CompanyPage() {
         </div>
         <div className="section-shell company-store-visual">
           <figure>
-            <img src="/images/k2volt-us-store-network-concept.png" alt="Concept visualization of a future K2VOLT energy experience and service center in the United States" width="2048" height="1536" loading="lazy" decoding="async" />
+            <img src="/images/k2volt-us-store-network-concept.webp" alt="Concept visualization of a future K2VOLT energy experience and service center in the United States" width="2048" height="1536" loading="lazy" decoding="async" />
             <figcaption>Concept visualization · Proposed K2VOLT U.S. energy experience and service center</figcaption>
           </figure>
           <aside>

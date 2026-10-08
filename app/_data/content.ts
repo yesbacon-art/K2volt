@@ -4,7 +4,7 @@ export const solutions = [
     label: 'Residential',
     name: 'K2 Home',
     statement: 'Whole-home energy confidence.',
-    image: '/images/k2volt-residential.png',
+    image: '/images/k2volt-residential.webp',
     alt: 'K2VOLT residential battery at a solar-powered American home',
     summary:
       'A quiet, intelligent energy-storage system designed to increase solar self-use and keep essential home loads ready through an outage.',
@@ -20,7 +20,7 @@ export const solutions = [
     label: 'Commercial & Industrial',
     name: 'K2 Business',
     statement: 'Energy that works as hard as your business.',
-    image: '/images/k2volt-commercial.png',
+    image: '/images/k2volt-commercial.webp',
     alt: 'K2VOLT commercial battery cabinets at a modern American facility',
     summary:
       'Modular storage for businesses and industrial sites seeking demand-cost control, operational resilience, and a more flexible energy strategy.',
@@ -36,7 +36,7 @@ export const solutions = [
     label: 'Utility Scale',
     name: 'K2 Grid',
     statement: 'Storage infrastructure for the modern grid.',
-    image: '/images/k2volt-utility.png',
+    image: '/images/k2volt-utility.webp',
     alt: 'K2VOLT utility-scale storage connected to renewable generation',
     summary:
       'Grid-ready energy storage engineered to support renewable integration, capacity requirements, and resilient power networks at scale.',
@@ -52,7 +52,7 @@ export const solutions = [
     label: 'EV Charging',
     name: 'K2 Charge',
     statement: 'Fast charging. Smarter infrastructure.',
-    image: '/images/k2volt-ev-charging.png',
+    image: '/images/k2volt-ev-charging.webp',
     alt: 'K2VOLT battery-integrated EV fast-charging infrastructure at an American commercial site',
     summary:
       'Battery-integrated charging infrastructure designed to support high-power EV charging, manage site demand, and create a more flexible path to electrification.',
@@ -68,7 +68,7 @@ export const solutions = [
     label: 'AIDC Power Modules',
     name: 'K2 AIDC',
     statement: 'Resilient power for intelligence at scale.',
-    image: '/images/k2volt-aidc-power.png',
+    image: '/images/k2volt-aidc-power.webp',
     alt: 'K2VOLT modular battery-backed power infrastructure for an American AI data center',
     summary:
       'Modular battery-backed power infrastructure for AI data centers, designed around high-density loads, operational continuity, and clear energy visibility.',
@@ -82,19 +82,19 @@ export const solutions = [
 ] as const;
 
 export const productCatalog = [
-  { slug: 'home-1', category: 'Residential storage', name: 'K2 Home 1.0', spec: '1.0 kWh portable LiFePO₄ power station', image: '/images/refu-products/volta-1.png' },
-  { slug: 'home-2', category: 'Residential storage', name: 'K2 Home 2.0', spec: '2.0 kWh portable home backup', image: '/images/refu-products/portable-2kwh.png' },
-  { slug: 'home-3', category: 'Residential storage', name: 'K2 Home 3.0', spec: '3.0 kWh portable home backup', image: '/images/refu-products/home-3.png' },
-  { slug: 'home-5', category: 'Residential storage', name: 'K2 Home 5', spec: '5.12 kWh modular home battery', image: '/images/refu-products/home-5.png' },
-  { slug: 'home-16', category: 'Residential storage', name: 'K2 Home 16', spec: '16 kWh scalable home storage', image: '/images/refu-products/home-16.png' },
-  { slug: 'business-112', category: 'Commercial & industrial', name: 'K2 Business 112', spec: '50 kW / 112.53 kWh C&I cabinet', image: '/images/refu-products/pro-112.png' },
-  { slug: 'business-261', category: 'Commercial & industrial', name: 'K2 Business 261', spec: '125 kW / 261 kWh C&I cabinet', image: '/images/refu-products/pro-261.png' },
-  { slug: 'business-522', category: 'Commercial & industrial', name: 'K2 Business 522', spec: '250 kW / 522 kWh C&I cabinet', image: '/images/refu-products/pro-522.png' },
-  { slug: 'grid-5', category: 'Utility-scale storage', name: 'K2 Grid 5', spec: '5.016 MWh liquid-cooled BESS', image: '/images/refu-products/grid-5.png' },
-  { slug: 'charge-60', category: 'EV charging', name: 'K2 Charge 60', spec: '60 kW dual-connector DC charger', image: '/images/refu-products/charger-60.png' },
-  { slug: 'charge-80', category: 'EV charging', name: 'K2 Charge 80', spec: '80 kW dual-connector DC charger', image: '/images/refu-products/charger-80.png' },
-  { slug: 'charge-120', category: 'EV charging', name: 'K2 Charge 120', spec: '120 kW dual-connector DC charger', image: '/images/refu-products/charger-120.png' },
-  { slug: 'energy-os', category: 'AIDC power', name: 'K2 Energy OS', spec: 'Connected energy control layer for AI infrastructure', image: '/images/refu-products/energy-os.png' },
+  { slug: 'home-1', category: 'Residential storage', name: 'K2 Home 1.0', spec: '1.0 kWh portable LiFePO₄ power station', image: '/images/refu-products/volta-1.webp' },
+  { slug: 'home-2', category: 'Residential storage', name: 'K2 Home 2.0', spec: '2.0 kWh portable home backup', image: '/images/refu-products/portable-2kwh.webp' },
+  { slug: 'home-3', category: 'Residential storage', name: 'K2 Home 3.0', spec: '3.0 kWh portable home backup', image: '/images/refu-products/home-3.webp' },
+  { slug: 'home-5', category: 'Residential storage', name: 'K2 Home 5', spec: '5.12 kWh modular home battery', image: '/images/refu-products/home-5.webp' },
+  { slug: 'home-16', category: 'Residential storage', name: 'K2 Home 16', spec: '16 kWh scalable home storage', image: '/images/refu-products/home-16.webp' },
+  { slug: 'business-112', category: 'Commercial & industrial', name: 'K2 Business 112', spec: '50 kW / 112.53 kWh C&I cabinet', image: '/images/refu-products/pro-112.webp' },
+  { slug: 'business-261', category: 'Commercial & industrial', name: 'K2 Business 261', spec: '125 kW / 261 kWh C&I cabinet', image: '/images/refu-products/pro-261.webp' },
+  { slug: 'business-522', category: 'Commercial & industrial', name: 'K2 Business 522', spec: '250 kW / 522 kWh C&I cabinet', image: '/images/refu-products/pro-522.webp' },
+  { slug: 'grid-5', category: 'Utility-scale storage', name: 'K2 Grid 5', spec: '5.016 MWh liquid-cooled BESS', image: '/images/refu-products/grid-5.webp' },
+  { slug: 'charge-60', category: 'EV charging', name: 'K2 Charge 60', spec: '60 kW dual-connector DC charger', image: '/images/refu-products/charger-60.webp' },
+  { slug: 'charge-80', category: 'EV charging', name: 'K2 Charge 80', spec: '80 kW dual-connector DC charger', image: '/images/refu-products/charger-80.webp' },
+  { slug: 'charge-120', category: 'EV charging', name: 'K2 Charge 120', spec: '120 kW dual-connector DC charger', image: '/images/refu-products/charger-120.webp' },
+  { slug: 'energy-os', category: 'AIDC power', name: 'K2 Energy OS', spec: 'Connected energy control layer for AI infrastructure', image: '/images/refu-products/energy-os.webp' },
 ] as const;
 
 export const news = [
@@ -106,7 +106,7 @@ export const news = [
     title: 'Introducing K2VOLT: two decades of battery expertise, focused on energy storage',
     excerpt:
       'K2VOLT brings the battery-first engineering heritage of K2 Energy into a dedicated platform for residential, commercial, and grid-scale storage.',
-    image: '/images/k2volt-utility.png',
+    image: '/images/k2volt-utility.webp',
     paragraphs: [
       'K2VOLT was created to focus proven battery experience on one of America’s most important infrastructure opportunities: storing energy where and when it is needed.',
       'As a K2 Energy brand, K2VOLT builds on experience that began with lithium iron phosphate cells and expanded through packs, modules, and custom high-performance systems. The new brand brings that foundation into connected stationary storage for homes, businesses, and the grid.',
@@ -122,7 +122,7 @@ export const news = [
     title: 'Why battery heritage matters in an energy-storage system',
     excerpt:
       'The best storage systems start with an understanding of how cells behave—not only how a finished enclosure looks on day one.',
-    image: '/images/k2-energy-legacy-cell.png',
+    image: '/images/k2-energy-legacy-cell.webp',
     paragraphs: [
       'Stationary energy storage is a system challenge, but every system outcome begins at the battery. Cell chemistry, thermal behavior, state estimation, pack design, and operating limits all shape real-world performance.',
       'K2 Energy’s work across cells, packs, modules, and demanding custom systems created a practical understanding of this relationship. K2VOLT carries that battery-first perspective into the architecture and operation of complete storage assets.',
@@ -138,7 +138,7 @@ export const news = [
     title: 'One energy strategy, three scales of storage',
     excerpt:
       'Homes, commercial facilities, and grid assets have different operating needs—but they benefit from the same disciplined system thinking.',
-    image: '/images/k2volt-commercial.png',
+    image: '/images/k2volt-commercial.webp',
     paragraphs: [
       'A homeowner may prioritize backup and solar self-use. A facility may focus on demand management and continuity. A grid operator may need capacity, renewable integration, and portfolio-level availability.',
       'K2VOLT addresses those distinct requirements with purpose-built system configurations while maintaining a connected philosophy across the portfolio: modular hardware, clear operating intelligence, and a path to scale.',
@@ -154,7 +154,7 @@ export const news = [
     title: 'Australia: Pi LV home-battery series added to the CEC approved list',
     excerpt:
       'K2 Battery Australia reported a second approved product family for the local market, strengthening its residential and off-grid storage offering.',
-    image: '/images/k2volt-residential.png',
+    image: '/images/k2volt-residential.webp',
     paragraphs: [
       'K2 Battery Australia announced that the Pytes Pi LV series had been listed under the Clean Energy Council Battery Assurance Program in July 2025.',
       'The listing covered modular configurations from 5.12 kWh through 30.72 kWh and followed the earlier recognition of the E-BOX 48100R platform.',
@@ -173,7 +173,7 @@ export const news = [
     title: 'Australia: K2 battery systems move further into the RV market',
     excerpt:
       'A 12V 100Ah K2 battery powered a new caravan hot-water system at the 2025 Victorian Caravan and Camping Supershow.',
-    image: '/images/k2-energy-legacy-cell.png',
+    image: '/images/k2-energy-legacy-cell.webp',
     paragraphs: [
       'At the 2025 Victorian Caravan and Camping Supershow, K2 Battery Australia displayed its 12V 100Ah LFP platform with Everything Caravans.',
       'The battery powered the ECP HotBox diesel hot-water system and highlighted built-in status display and Bluetooth communications for mobile-power applications.',
@@ -192,7 +192,7 @@ export const news = [
     title: 'A new K2 chapter begins in Australia',
     excerpt:
       'K2’s Australian business traces its market entry to 2022, initially connecting the American battery heritage with portable and outdoor power products.',
-    image: '/images/k2volt-residential.png',
+    image: '/images/k2volt-residential.webp',
     paragraphs: [
       'K2 Energy Australia’s official store records 2022 as the year the brand entered the Australian market.',
       'The initial offering focused on reliable portable power and tools for camping and travel, while the broader K2 Battery business developed LFP solutions for caravans, marine use, emergency power, and off-grid living.',
@@ -211,7 +211,7 @@ export const news = [
     title: 'U.S. Navy Phase II program advances high-power large-format cells',
     excerpt:
       'A federal Phase II award extended K2 Energy’s work on high-power LFP cell designs and thermal management for demanding pulse-power use.',
-    image: '/images/k2-energy-legacy-cell.png',
+    image: '/images/k2-energy-legacy-cell.webp',
     paragraphs: [
       'The U.S. Small Business Innovation Research portfolio records a 2017 Navy Phase II award to K2 Energy Solutions for enhanced large-format cell designs.',
       'The program focused on a high-energy-density, high-power cylindrical cell using lithium iron phosphate chemistry with internal and external thermal-management approaches.',
@@ -230,7 +230,7 @@ export const news = [
     title: 'K2 Energy selected for a high-power NAVSEA storage system',
     excerpt:
       'K2 Energy announced its role as the sole-source battery provider for an intermediate energy-storage system supporting the U.S. Navy railgun program.',
-    image: '/images/k2volt-utility.png',
+    image: '/images/k2volt-utility.webp',
     paragraphs: [
       'In January 2015, K2 Energy Solutions announced receipt of the first order under a NAVSEA contract for an intermediate energy-storage battery system.',
       'The published contract framework covered design, engineering, and support for the storage system used to power capacitor-bank modules in the Navy’s electromagnetic railgun development program.',
@@ -249,7 +249,7 @@ export const news = [
     title: 'Early U.S. Navy award develops modular lithium-ion storage',
     excerpt:
       'A 2009 Navy SBIR project asked K2 Energy to design and fabricate a modular battery system based on its LFP technology and vehicle-system experience.',
-    image: '/images/k2-energy-legacy-cell.png',
+    image: '/images/k2-energy-legacy-cell.webp',
     paragraphs: [
       'The federal SBIR record documents a 2009 Phase I Navy award to K2 Energy Solutions for advanced lithium-ion modular energy-storage batteries.',
       'The project drew on modular systems the company had already developed for high-performance electric vehicles and applied its lithium iron phosphate platform to naval energy-storage requirements.',

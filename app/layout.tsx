@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './multipage.css';
+import './upgrade.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ??
-      'https://k2volt-energy.yesbacon130976.chatgpt.site',
+      'https://www.k2volt.com',
   ),
   title: 'K2VOLT | 20 Years of Battery Expertise, Built for Energy Infrastructure',
   description:

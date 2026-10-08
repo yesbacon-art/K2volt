@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { solutions } from '../../_data/content';
+import { productCatalog } from '../../_data/content';
+import { productFamilies } from '../../_data/products';
 import { Arrow, PageFrame, PageHero, ProjectCTA } from '../../_components/site';
 
 const origin =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  'https://k2volt-energy.yesbacon130976.chatgpt.site';
+  'https://www.k2volt.com';
 
 export function generateStaticParams() {
   return solutions.map((solution) => ({ slug: solution.slug }));
@@ -62,6 +64,17 @@ export default async function SolutionDetailPage({ params }: { params: Promise<{
             ))}
           </div>
           <Link className="inline-link" href="/solutions">View all K2VOLT systems <Arrow /></Link>
+        </div>
+      </section>
+      <section className="page-section">
+        <div className="section-shell">
+          <p className="section-kicker">Explore the portfolio</p>
+          <h2>Products for this application.</h2>
+          <div className="related-product-grid">
+            {productCatalog.filter((product) => productFamilies.find((family) => family.category === product.category)?.solution === solution.slug).map((product) => (
+              <Link href={`/products/${product.slug}`} className="related-product" key={product.slug}><img src={product.image} alt={product.name} loading="lazy" /><h3>{product.name}</h3><p>{product.spec}</p><span>Explore product</span></Link>
+            ))}
+          </div>
         </div>
       </section>
       <ProjectCTA />

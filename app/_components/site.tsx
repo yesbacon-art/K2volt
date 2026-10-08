@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { news, solutions, type NewsItem, type Solution } from '../_data/content';
+export { SiteHeader } from './navigation';
+import { SiteHeader } from './navigation';
 
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -9,27 +11,6 @@ export function BrandMark() {
     <span className="brand-picture" aria-label="K2VOLT">
       <img src="/images/k2volt-logo-official.png" alt="K2VOLT" />
     </span>
-  );
-}
-
-export function SiteHeader() {
-  return (
-    <header className="site-header">
-      <Link className="brand" href="/" aria-label="K2VOLT home">
-        <BrandMark />
-      </Link>
-      <nav className="desktop-nav" aria-label="Primary navigation">
-        <Link href="/solutions">Solutions</Link>
-        <Link href="/technology">Technology</Link>
-        <Link href="/heritage">K2 History</Link>
-        <Link href="/company">Company</Link>
-        <Link href="/company#american-future">U.S. Future</Link>
-        <Link href="/news">News</Link>
-      </nav>
-      <Link className="nav-cta" href="/contact">
-        Talk to K2VOLT <Arrow />
-      </Link>
-    </header>
   );
 }
 
@@ -43,6 +24,7 @@ export function SiteFooter() {
         </div>
         <div>
           <strong>Solutions</strong>
+          <Link href="/products">Product catalog</Link>
           {solutions.map((solution) => (
             <Link href={`/solutions/${solution.slug}`} key={solution.slug}>{solution.label}</Link>
           ))}
@@ -66,7 +48,7 @@ export function SiteFooter() {
 }
 
 export function PageFrame({ children }: { children: ReactNode }) {
-  return <main><SiteHeader />{children}<SiteFooter /></main>;
+  return <><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></>;
 }
 
 export function PageHero({
