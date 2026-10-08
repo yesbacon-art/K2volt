@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
 
 const futurePriorities = [
@@ -60,10 +61,11 @@ export default function CompanyPage() {
         image="/images/k2volt-utility.webp"
         alt="K2VOLT energy storage infrastructure in the United States"
       />
-      <section className="page-section">
+      <nav className="company-section-nav section-shell" aria-label="Company page sections"><a href="#mission">Our mission</a><a href="#leadership">Team disciplines</a><a href="#store-network">U.S. service vision</a><a href="#american-future">Future priorities</a></nav>
+      <section className="page-section" id="mission">
         <div className="section-shell section-intro-grid">
           <div><p className="section-kicker">Our company</p><h2>A focused mission.<br />A proven foundation.</h2></div>
-          <div><p>K2VOLT is the energy-infrastructure brand of K2 Energy. We connect two decades of battery experience with modern power electronics and energy management for American homes, businesses, charging networks, AI data centers, and the grid.</p></div>
+          <div><p>K2VOLT is the energy-infrastructure brand of K2 Energy. We connect two decades of battery experience with modern power electronics and energy management for American homes, businesses, charging networks, AI data centers, and the grid.</p><Link className="inline-link" href="/heritage">Explore the documented K2 history</Link></div>
         </div>
         <div className="section-shell capability-grid">
           <article><span>01</span><h3>Battery-first thinking</h3><p>Our system philosophy begins with cell behavior, safety, durability, and real-world operating conditions.</p></article>
@@ -80,17 +82,17 @@ export default function CompanyPage() {
       <section className="page-section company-leadership" id="leadership">
         <div className="section-shell leadership-heading">
           <div>
-            <p className="section-kicker">Leadership</p>
-            <h2>Built by people<br />who think long term.</h2>
+            <p className="section-kicker">Team disciplines · preview</p>
+            <h2>Four disciplines.<br />One energy mission.</h2>
           </div>
-          <p>Four disciplines work as one leadership team—connecting company direction, technology, operations, and customer growth around a clear American energy mission.</p>
+          <p>Executive direction, technology, operations, and customer growth define the team structure presented here. These are role profiles with fictional test portraits—not confirmed biographies of named company officers.</p>
         </div>
         <div className="section-shell leadership-grid">
           {leadershipTeam.map((leader) => (
             <article className="leadership-card" key={leader.number}>
               <div className="leadership-card-top">
                 <span className="leadership-number">{leader.number}</span>
-                <span className="leadership-status">Fictional test portrait</span>
+                <span className="leadership-status">Test portrait · not an actual executive</span>
               </div>
               <div className="leadership-portrait">
                 <img src={leader.image} alt={`Fictional test portrait for ${leader.role}`} width="900" height="900" loading="lazy" decoding="async" />
@@ -142,8 +144,9 @@ export default function CompanyPage() {
             <h2>Deep roots.<br />A long horizon.</h2>
           </div>
           <div>
-            <p className="company-future-lead">K2VOLT is an American pioneer in new-energy research and advanced storage, charging, and AIDC power-equipment manufacturing.</p>
+            <p className="company-future-lead">Our ambition is to build an American platform for new-energy research, advanced equipment, and long-term customer service.</p>
             <p>We are committed to deepening our presence in the United States—advancing technology, strengthening domestic manufacturing capability, and helping build the energy systems America will depend on for decades.</p>
+            <p className="company-planning-note">Development priorities—not a statement that new manufacturing facilities or 100 service locations are already operational.</p>
           </div>
         </div>
         <div className="section-shell capability-grid company-future-grid">

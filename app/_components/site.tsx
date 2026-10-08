@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { news, solutions, type NewsItem, type Solution } from '../_data/content';
+import { news, solutions, type Solution } from '../_data/content';
+import { NewsCard } from './news-card';
+export { NewsCard } from './news-card';
 export { SiteHeader } from './navigation';
 import { SiteHeader } from './navigation';
 
@@ -89,20 +91,6 @@ export function SolutionPreview({ solution }: { solution: Solution }) {
         <span>{solution.summary}</span>
         <Link className="inline-link" href={`/solutions/${solution.slug}`}>View system <Arrow /></Link>
       </div>
-    </article>
-  );
-}
-
-export function NewsCard({ item }: { item: NewsItem }) {
-  return (
-    <article className="news-card">
-      <Link className="news-card-image" href={`/news/${item.slug}`}>
-        <img src={item.image} alt="" loading="lazy" decoding="async" />
-      </Link>
-      <p>{item.region} · {item.category} · {item.date}</p>
-      <h3><Link href={`/news/${item.slug}`}>{item.title}</Link></h3>
-      <span>{item.excerpt}</span>
-      <Link className="inline-link" href={`/news/${item.slug}`}>Read article <Arrow /></Link>
     </article>
   );
 }

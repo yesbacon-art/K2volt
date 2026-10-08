@@ -1,148 +1,77 @@
 import type { Metadata } from 'next';
-import { Arrow, PageFrame, PageHero, ProjectCTA } from '../_components/site';
+import Link from 'next/link';
+import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
+
+const nevadaRecord = 'https://www.leg.state.nv.us/App/InterimCommittee/REL/Document/17343';
+const portfolio = 'https://www.sbir.gov/portfolio/207156';
+const navseaRelease = 'https://www.prnewswire.com/news-releases/k2-energy-solutions-to-supply-a-fully-self-contained-energy-storage-system-for-the-naval-sea-systems-navsea-electromagnetic-rail-gun-300015255.html';
 
 const milestones = [
-  {
-    year: '2006',
-    region: 'United States',
-    title: 'Founded in Henderson, Nevada',
-    copy: 'K2 Energy begins with a team focused on lithium iron phosphate technology and completes early commercial builds of 18650 and 26650 energy cells.',
-    source: ['K2 Energy — official history', 'https://k2energysolution.com/pages/about-us'],
-  },
-  {
-    year: '2007–2008',
-    region: 'United States',
-    title: 'Commercial cells and early recognition',
-    copy: 'Commercial power-cell platforms launch, Nevada technology organizations recognize the company, and K2 receives its first documented U.S. SBIR award for Army battery research.',
-    source: ['U.S. SBIR — company portfolio', 'https://www.sbir.gov/portfolio/207156'],
-  },
-  {
-    year: '2009–2010',
-    region: 'United States',
-    title: 'From cells to modular systems',
-    copy: 'A Navy SBIR project applies K2’s LFP technology to modular energy storage. Company records also document EV programs, a U.S. Advanced Battery Consortium assessment, and growth beyond 40 employees.',
-    source: ['U.S. SBIR — 2009 Navy award', 'https://www.sbir.gov/awards/63946'],
-  },
-  {
-    year: '2011–2012',
-    region: 'United States',
-    title: 'Rapid growth and high-temperature cells',
-    copy: 'K2 records worldwide workforce growth, recognition on the Inc. 500/5000, and the launch of a high-temperature energy-cell platform.',
-    source: ['K2 Energy — official history', 'https://k2energysolution.com/pages/about-us'],
-  },
-  {
-    year: '2013–2015',
-    region: 'United States',
-    title: 'Henderson expansion and defense programs',
-    copy: 'A new Nevada headquarters opens. Federal records document advanced manufacturing and Navy cell work, while K2 announces a major NAVSEA high-discharge energy-storage system program.',
-    source: ['K2 Energy — NAVSEA announcement', 'https://www.prnewswire.com/news-releases/k2-energy-solutions-to-supply-a-fully-self-contained-energy-storage-system-for-the-naval-sea-systems-navsea-electromagnetic-rail-gun-300015255.html'],
-  },
-  {
-    year: '2016–2017',
-    region: 'United States',
-    title: 'R&D and large-format cell development',
-    copy: 'K2’s published history records expanded domestic R&D and cell-production capability. A Navy Phase II award advances high-power, large-format LFP cell and thermal-management design.',
-    source: ['U.S. SBIR — K2 portfolio', 'https://www.sbir.gov/portfolio/207156'],
-  },
-  {
-    year: '2022',
-    region: 'Australia',
-    title: 'K2 enters the Australian market',
-    copy: 'K2 Energy Australia records 2022 as its market entry, initially connecting the American battery story with portable power and products designed for camping and travel.',
-    source: ['K2 Energy Australia — company history', 'https://k2energystore.com.au/'],
-  },
-  {
-    year: '2023–2025',
-    region: 'Australia',
-    title: 'A broader Australian energy platform',
-    copy: 'The Australian business expands across LFP batteries, power stations, RV and marine applications, off-grid systems, residential solar storage, installers, resellers, and approved battery products.',
-    source: ['K2 Battery Australia — about the business', 'https://k2battery.com.au/about-us/'],
-  },
-  {
-    year: '2026',
-    region: 'United States',
-    title: 'K2VOLT focuses the next chapter',
-    copy: 'K2VOLT brings this cell-to-system experience into a dedicated American platform spanning stationary storage, EV charging, and AIDC power infrastructure.',
-    source: null,
-  },
+  { year: '2006', kind: 'Founding · recorded in 2010', title: 'Henderson, Nevada. The starting point.', copy: 'Nevada legislative minutes record K2’s founding in Henderson in 2006.', source: ['Nevada Legislature', nevadaRecord], article: 'nevada-engineering-foundation-2010' },
+  { year: '2008', kind: 'Government research record', title: 'Early high-rate cell research', copy: 'K2’s first recorded SBIR award: Army Phase I research into high-rate 18650 cells.', source: ['U.S. SBIR portfolio', portfolio], article: 'army-cell-research-2008' },
+  { year: '2009', kind: 'Government research record', title: 'A modular storage research program', copy: 'Navy Phase I research applies vehicle-battery experience to modular storage.', source: ['U.S. SBIR award record', 'https://www.sbir.gov/awards/63946'], article: 'navy-modular-energy-storage-2009' },
+  { year: '2010', kind: 'Legislative meeting record', title: 'A broader development agenda', copy: 'A legislative presentation describes development of a 1 MWh battery, a cell laboratory, and large-format cells—not completed installations.', source: ['Nevada Legislature', nevadaRecord], article: 'nevada-engineering-foundation-2010' },
+  { year: '2014', kind: 'Government research record', title: 'Manufacturing-process research', copy: 'DLA Phase I research investigates a process intended to eliminate volatile organic compounds.', source: ['U.S. SBIR portfolio', portfolio], article: 'manufacturing-process-research-2014' },
+  { year: '2015', kind: 'Company-published announcement', title: 'High-power systems enter the archive', copy: 'K2 announces a first order for an intermediate storage system in NAVSEA’s railgun development program.', source: ['K2 release / PR Newswire', navseaRelease], article: 'navsea-energy-storage-program-2015' },
+  { year: '2017', kind: 'Government research record', title: 'Large-format cell development', copy: 'A Navy Phase II award concerns high-power LFP cells and thermal-management research.', source: ['U.S. SBIR portfolio', portfolio], article: 'us-navy-phase-two-cell-program-2017' },
+  { year: 'Today', kind: 'K2VOLT brand direction', title: 'The next energy chapter', copy: 'K2VOLT focuses that battery-first perspective on storage, EV charging, and AIDC power. Future facilities and service networks remain development goals.', source: null, article: 'introducing-k2volt' },
 ] as const;
 
 const researchSources = [
-  ['K2 Energy official history', 'Company milestones from 2006 through product and facility expansion.', 'https://k2energysolution.com/pages/about-us'],
-  ['U.S. SBIR portfolio', 'Federal records for K2 Energy’s Army, Navy, and Defense Logistics Agency research awards.', 'https://www.sbir.gov/portfolio/207156'],
-  ['K2 Energy Australia', 'The Australian market-entry account and current company positioning.', 'https://k2energystore.com.au/'],
-  ['K2 Battery Australia news', 'Local product approvals, events, partners, and application updates.', 'https://k2battery.com.au/k2-news/'],
+  ['Nevada legislative record', '2010 meeting minutes documenting a company presentation and the 2006 founding account.', nevadaRecord],
+  ['U.S. SBIR portfolio', 'Federal award records covering Army, Navy, and DLA research.', portfolio],
+  ['2009 modular-storage award', 'The individual Navy Phase I award, abstract, and historical schedule.', 'https://www.sbir.gov/awards/63946'],
+  ['2015 K2 company release', 'K2 Energy Solutions’ own announcement, distributed through PR Newswire.', navseaRelease],
 ] as const;
 
 export const metadata: Metadata = {
   title: 'K2 Energy Heritage | K2VOLT',
-  description: 'K2VOLT carries forward two decades of K2 Energy battery engineering experience.',
+  description: 'Explore K2 Energy’s Nevada origins and documented U.S. battery research through a source-linked historical timeline.',
 };
 
 export default function HeritagePage() {
   return (
     <PageFrame>
-      <PageHero
-        eyebrow="K2 Energy heritage"
-        title={<>Twenty years of<br /><em>battery engineering.</em></>}
-        description="K2VOLT is the energy-infrastructure chapter of a battery story that began in Nevada in 2006."
-        image="/images/k2-energy-legacy-cell.png"
-        alt="K2 Energy lithium iron phosphate battery from the company product heritage"
-      />
+      <PageHero eyebrow="K2 Energy heritage" title={<>Twenty years of<br /><em>battery thinking.</em></>} description="An American battery story, traced through historical records—not just a list of dates." image="/images/k2-energy-legacy-cell.webp" alt="Legacy K2 Energy lithium iron phosphate battery" />
       <section className="page-section">
         <div className="section-shell split-section">
-          <img src="/images/k2-energy-legacy-cell.png" alt="Legacy K2 Energy lithium iron phosphate battery" />
+          <img src="/images/k2-energy-legacy-cell.webp" alt="Legacy K2 Energy battery product" width="1536" height="1024" loading="lazy" decoding="async" />
           <div className="split-section-copy">
             <img className="heritage-page-logo" src="/images/k2-energy-logo.png" alt="K2 Energy" />
-            <p className="section-kicker">The experience behind K2VOLT</p>
-            <h2>A new chapter in<br />a proven story.</h2>
-            <p>K2 Energy began developing commercial lithium iron phosphate cells and expanded into packs, modules, and custom high-performance battery systems serving demanding applications.</p>
-            <p>That cell-to-system perspective now informs K2VOLT’s approach to stationary storage, EV charging, and mission-critical AIDC power infrastructure.</p>
-            <a className="inline-link" href="https://k2energysolutions.com/" target="_blank" rel="noreferrer">Visit K2 Energy <Arrow /></a>
+            <p className="section-kicker">The experience behind K2VOLT</p><h2>From cell behavior<br />to system thinking.</h2>
+            <p>Understanding the battery is the starting point: its chemistry, thermal behavior, operating limits, and relationship with the complete system.</p>
+            <p>K2VOLT brings that perspective to a portfolio spanning homes, businesses, the grid, electric mobility, and AI infrastructure.</p>
+            <Link className="inline-link" href="/products">Explore the K2VOLT portfolio</Link>
           </div>
         </div>
       </section>
-      <section className="page-section page-section-dark heritage-regions">
+      <section className="page-section page-section-soft heritage-chronology" id="timeline">
         <div className="section-shell section-intro-grid">
-          <div><p className="section-kicker section-kicker-dark">Two active markets</p><h2>American roots.<br />An Australian chapter.</h2></div>
-          <div><p>K2’s documented story begins with battery R&amp;D and manufacturing in Nevada. The Australian business records a 2022 market entry and today extends the platform across portable power, RV, off-grid, and residential storage applications.</p></div>
-        </div>
-        <div className="section-shell heritage-region-grid">
-          <article><span>US</span><p>Origin · Engineering · Advanced systems</p><h3>United States</h3><p>Commercial cell platforms, federal R&amp;D programs, high-power modular systems, and the battery engineering foundation behind K2VOLT.</p></article>
-          <article><span>AU</span><p>Market · Products · Partnerships</p><h3>Australia</h3><p>Portable and mobile power, LFP batteries, off-grid and home storage, plus a growing installer and reseller ecosystem.</p></article>
-        </div>
-      </section>
-      <section className="page-section page-section-soft heritage-chronology">
-        <div className="section-shell section-intro-grid">
-          <div><p className="section-kicker">Verified development record</p><h2>From 2006<br />to what comes next.</h2></div>
-          <div><p>This timeline combines K2’s published company history with U.S. government award records and official Australian market updates. Each external milestone links to its underlying source.</p></div>
+          <div><p className="section-kicker">Documented U.S. chronology</p><h2>A foundation<br />built over time.</h2></div>
+          <div><p>Government records, historical company announcements, and K2VOLT’s current direction are identified separately. Research awards describe funded development—not product certification, completed deployments, or present-day government endorsement.</p></div>
         </div>
         <div className="section-shell heritage-chronology-shell">
           <ol className="heritage-chronology-list">
-            {milestones.map((item) => (
-              <li key={`${item.year}-${item.title}`}>
-                <div className="heritage-chronology-meta"><time>{item.year}</time><span>{item.region}</span></div>
-                <div className="heritage-chronology-copy"><h3>{item.title}</h3><p>{item.copy}</p></div>
-                <div className="heritage-chronology-source">
-                  {item.source ? <a href={item.source[1]} target="_blank" rel="noreferrer">{item.source[0]} <Arrow /></a> : <span>K2VOLT company milestone</span>}
-                </div>
-              </li>
-            ))}
+            {milestones.map(item => <li key={item.year}>
+              <div className="heritage-chronology-meta"><time>{item.year}</time><span>{item.kind}</span></div>
+              <div className="heritage-chronology-copy"><h3>{item.title}</h3><p>{item.copy}</p><Link className="inline-link" href={`/news/${item.article}`}>Read the archive</Link></div>
+              <div className="heritage-chronology-source">{item.source ? <a href={item.source[1]} target="_blank" rel="noreferrer">{item.source[0]}</a> : <span>Brand direction · not a historical award</span>}</div>
+            </li>)}
           </ol>
         </div>
       </section>
-      <section className="page-section heritage-sources">
+      <section className="page-section heritage-regional-context">
+        <div className="section-shell section-intro-grid">
+          <div><p className="section-kicker">Australian research context</p><h2>A regional archive.<br />Clearly distinguished.</h2></div>
+          <div><p>Previously collected Australian references remain available in the news library. Some original pages are unavailable, and the relationship of those businesses to U.S. K2 Energy is not independently established by the accessible sources.</p><p>These references are separated from the verified U.S. chronology and must not be used as K2VOLT product approvals or evidence of a corporate relationship.</p><Link className="inline-link" href="/news?section=regional#archive">Browse regional references</Link></div>
+        </div>
+      </section>
+      <section className="page-section page-section-soft heritage-sources">
         <div className="section-shell section-intro-grid">
           <div><p className="section-kicker">Research library</p><h2>The record<br />behind the story.</h2></div>
-          <div><p>These primary and company-published collections anchor the expanding K2 archive. Additional historical documents and news can be added as they are verified.</p></div>
+          <div><p>Read the underlying material in its original context. New milestones can be added as supporting documents become available.</p></div>
         </div>
-        <div className="section-shell heritage-source-grid">
-          {researchSources.map(([title, copy, url], index) => (
-            <a href={url} target="_blank" rel="noreferrer" key={title}>
-              <span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p><Arrow />
-            </a>
-          ))}
-        </div>
+        <div className="section-shell heritage-source-grid">{researchSources.map(([title, copy, url], index) => <a href={url} target="_blank" rel="noreferrer" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p></a>)}</div>
       </section>
       <ProjectCTA />
     </PageFrame>
