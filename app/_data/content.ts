@@ -4,7 +4,7 @@ export const solutions = [
     label: 'Residential',
     name: 'K2 Home',
     statement: 'Whole-home energy confidence.',
-    image: '/images/k2volt-residential.webp',
+    image: '/images/visual-review/residential.webp',
     alt: 'K2VOLT residential battery at a solar-powered American home',
     summary:
       'A quiet, intelligent energy-storage system designed to increase solar self-use and keep essential home loads ready through an outage.',
@@ -20,7 +20,7 @@ export const solutions = [
     label: 'Commercial & Industrial',
     name: 'K2 Business',
     statement: 'Energy that works as hard as your business.',
-    image: '/images/k2volt-commercial.webp',
+    image: '/images/visual-review/commercial.webp',
     alt: 'K2VOLT commercial battery cabinets at a modern American facility',
     summary:
       'Modular storage for businesses and industrial sites seeking demand-cost control, operational resilience, and a more flexible energy strategy.',
@@ -36,7 +36,7 @@ export const solutions = [
     label: 'Utility Scale',
     name: 'K2 Grid',
     statement: 'Storage infrastructure for the modern grid.',
-    image: '/images/k2volt-utility.webp',
+    image: '/images/visual-review/utility.webp',
     alt: 'K2VOLT utility-scale storage connected to renewable generation',
     summary:
       'Grid-ready energy storage engineered to support renewable integration, capacity requirements, and resilient power networks at scale.',
@@ -52,7 +52,7 @@ export const solutions = [
     label: 'EV Charging',
     name: 'K2 Charge',
     statement: 'Fast charging. Smarter infrastructure.',
-    image: '/images/k2volt-ev-charging.webp',
+    image: '/images/visual-review/charging.webp',
     alt: 'K2VOLT battery-integrated EV fast-charging infrastructure at an American commercial site',
     summary:
       'Battery-integrated charging infrastructure designed to support high-power EV charging, manage site demand, and create a more flexible path to electrification.',
@@ -68,7 +68,7 @@ export const solutions = [
     label: 'AIDC Power Modules',
     name: 'K2 AIDC',
     statement: 'Resilient power for intelligence at scale.',
-    image: '/images/k2volt-aidc-power.webp',
+    image: '/images/visual-review/aidc.webp',
     alt: 'K2VOLT modular battery-backed power infrastructure for an American AI data center',
     summary:
       'Modular battery-backed power infrastructure for AI data centers, designed around high-density loads, operational continuity, and clear energy visibility.',

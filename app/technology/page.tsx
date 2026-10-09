@@ -26,7 +26,7 @@ export default function TechnologyPage() {
         eyebrow="Technology / System architecture"
         title={<>Energy is a system.<br /><em>Design it as one.</em></>}
         description="Battery capacity, power equipment and energy controls each have a role. Our approach starts by defining how those layers work together at the site."
-        image="/images/k2volt-commercial.webp"
+        image="/images/visual-review/commercial.webp"
         alt="K2VOLT commercial energy storage system"
       />
       <nav className="section-shell product-section-nav" aria-label="Technology page sections"><a href="#architecture">System layers</a><a href="#energy-controls">K2 Energy OS</a><a href="#integration">Project integration</a></nav>

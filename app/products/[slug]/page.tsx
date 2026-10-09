@@ -5,6 +5,16 @@ import { productCatalog } from '../../_data/content';
 import { getProductDetails } from '../../_data/products';
 import { PageFrame } from '../../_components/site';
 import { PrintButton } from '../../_components/print-button';
+import { CatalogDownload } from '../../_components/catalog-download';
+
+const documentationScope = [
+  ['Dimensions & weight', 'Request the dimensional drawing and equipment weight for the selected configuration.'],
+  ['Electrical ratings & interfaces', 'Confirm detailed ratings, connection standards and equipment compatibility.'],
+  ['Installation & operating conditions', 'Confirm the installation environment, access, protection and commissioning requirements.'],
+  ['Certifications & market eligibility', 'Request supporting documentation for the destination market and the exact configuration.'],
+  ['Warranty & service', 'Agree on written warranty terms, service coverage and maintenance responsibilities.'],
+  ['Technical datasheet & installation guide', 'Request the current configuration-specific documents before ordering or installation.'],
+] as const;
 
 export function generateStaticParams() { return productCatalog.map((product) => ({ slug: product.slug })); }
 
@@ -20,6 +30,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const product = productCatalog.find((item) => item.slug === slug);
   if (!product) notFound();
   const details = getProductDetails(product);
+  const overview = [
+    'K2VOLT — Catalog overview', product.name, '',
+    'This is a catalog summary, not a certified technical datasheet.',
+    'Availability and final equipment configuration require confirmation.', '',
+    ...details.rows.map(([label, value]) => `${label}: ${value}`), '',
+    'Potential applications', ...details.applications.map(item => `- ${item}`), '',
+    'Project planning requirements', ...details.requirements.map(item => `- ${item}`), '',
+    'Documentation to request', ...documentationScope.map(([title, copy]) => `- ${title}: ${copy}`), '',
+    'Concept imagery does not establish final equipment dimensions or technical specifications.',
+    'Contact: hello@k2volt.com',
+  ].join('\n');
   const related = productCatalog.filter((item) => item.category === product.category && item.slug !== slug).slice(0, 3);
   return <PageFrame>
     <section className="product-detail" id="overview">
@@ -29,11 +50,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div><p className="section-kicker">{product.category}</p><h1>{product.name}</h1><p className="product-detail-spec">{product.spec}</p><p>{details.description}</p>
           <dl className="product-key-values">{details.energy ? <div><dt>Listed energy</dt><dd>{details.energy}</dd></div> : null}{details.power ? <div><dt>Listed power</dt><dd>{details.power}</dd></div> : null}{!details.energy && !details.power ? <div><dt>System layer</dt><dd>Energy controls</dd></div> : null}</dl>
           <div className="product-actions"><Link className="button button-primary" href={`/contact?product=${product.slug}`}>Discuss this product</Link><PrintButton /></div>
+          <Link className="inline-link product-compare-link" href={`/products/?family=${details.solution}&compare=${product.slug}#comparison`}>Compare within this family</Link>
           <p className="product-availability">Project configuration · Confirm availability and market compatibility with K2VOLT.</p>
         </div>
       </div>
     </section>
-    <nav className="section-shell product-section-nav" aria-label="Product page sections"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#planning">Project planning</a>{related.length ? <a href="#related">Within the family</a> : null}</nav>
+    <nav className="section-shell product-section-nav" aria-label="Product page sections"><a href="#overview">Overview</a><a href="#specifications">Specifications</a><a href="#planning">Project planning</a><a href="#documentation">Documents &amp; service</a>{related.length ? <a href="#related">Within the family</a> : null}</nav>
     <section className="page-section page-section-soft product-spec-section" id="specifications">
       <div className="section-shell product-information-grid"><div><p className="section-kicker">Product overview</p><h2>Configuration<br />at a glance.</h2><p className="product-information-note">These values reflect the current product catalog. This overview is not a certified technical datasheet.</p></div>
         <div><table className="specification-table"><caption className="sr-only">{product.name} catalog specifications</caption><tbody>{details.rows.map(([label, value]) => <tr key={label}><th scope="row">{label}</th><td>{value}</td></tr>)}</tbody></table><p className="product-information-note">Detailed electrical ratings, dimensions, operating conditions, certifications and warranty terms are supplied after the configuration and destination market are confirmed.</p></div>
@@ -44,6 +66,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div><h3>Potential applications</h3><ul className="product-list">{details.applications.map((item) => <li key={item}>{item}</li>)}</ul><h3>What we need to plan your project</h3><ul className="product-list">{details.requirements.map((item) => <li key={item}>{item}</li>)}</ul><p className="product-information-note">Backup operation, system integration and service coverage depend on the final system design. Discuss installation, commissioning, support and warranty scope before ordering.</p></div>
       </div>
     </section>
-    {related.length ? <section className="page-section page-section-soft related-section" id="related"><div className="section-shell"><p className="section-kicker">Within the family</p><h2>Explore other configurations.</h2><div className="related-product-grid">{related.map((item) => <Link href={`/products/${item.slug}`} className="related-product" key={item.slug}><img src={item.image} alt={item.name} width="800" height="800" loading="lazy" decoding="async" /><h3>{item.name}</h3><p>{item.spec}</p><span>Explore product</span></Link>)}</div><Link className="inline-link family-return-link" href={`/products?family=${details.solution}`}>Browse the complete product family</Link></div></section> : null}
+    <section className="page-section page-section-soft product-documentation" id="documentation"><div className="section-shell product-information-grid"><div><p className="section-kicker">Documents &amp; service</p><h2>Know the scope.<br />Before you specify.</h2><p className="product-information-note">The current catalog does not provide verified dimensions, complete electrical ratings, certifications or warranty terms. Request the documents below for your exact configuration.</p><div className="product-document-actions"><CatalogDownload filename={`${product.slug}-catalog-overview.txt`} content={overview} /><Link className="inline-link" href={`/contact?product=${product.slug}`}>Request technical documents</Link></div><p className="product-information-note">The text download contains listed catalog values and a planning checklist only. It is not an installation guide or a certified technical datasheet.</p></div><div className="product-document-grid">{documentationScope.map(([title, copy]) => <article key={title}><span>Project-specific confirmation required</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    {related.length ? <section className="page-section related-section" id="related"><div className="section-shell"><p className="section-kicker">Within the family</p><h2>Explore other configurations.</h2><div className="related-product-grid">{related.map((item) => <Link href={`/products/${item.slug}`} className="related-product" key={item.slug}><img src={item.image} alt={item.name} width="800" height="800" loading="lazy" decoding="async" /><h3>{item.name}</h3><p>{item.spec}</p><span>Explore product</span></Link>)}</div><Link className="inline-link family-return-link" href={`/products?family=${details.solution}`}>Browse the complete product family</Link></div></section> : null}
   </PageFrame>;
 }

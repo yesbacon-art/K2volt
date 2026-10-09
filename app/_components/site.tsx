@@ -85,12 +85,13 @@ export function SolutionPreview({ solution }: { solution: Solution }) {
   return (
     <article className="solution-preview">
       <Link className="solution-preview-image" href={`/solutions/${solution.slug}`}>
-        <img src={solution.image} alt={solution.alt} loading="lazy" decoding="async" />
+        <img src={solution.image} alt={`${solution.alt} — application concept visualization`} width="1600" height="1200" loading="lazy" decoding="async" />
       </Link>
       <div className="solution-preview-copy">
         <p>{solution.label}</p>
         <h3>{solution.name}</h3>
         <span>{solution.summary}</span>
+        <small className="solution-image-note">Application concept visualization</small>
         <Link className="inline-link" href={`/solutions/${solution.slug}`}>Explore the application</Link>
       </div>
     </article>

@@ -17,6 +17,8 @@ export default function Home() {
           src="/images/k2volt-utility.webp"
           alt="K2VOLT energy storage concept with renewable generation"
           fetchPriority="high"
+          width="1536"
+          height="960"
         />
         <div className="home-hero-wash" aria-hidden="true" />
         <div className="section-shell home-hero-inner">
@@ -31,6 +33,7 @@ export default function Home() {
             <Link className="button button-quiet" href="/contact">Plan a project</Link>
           </div>
         </div>
+        <p className="home-hero-image-note">Energy infrastructure · concept visualization</p>
         <div className="home-proof">
           <div><strong>2006</strong><span>K2 Energy’s battery roots</span></div>
           <div><strong>05</strong><span>Energy applications</span></div>
