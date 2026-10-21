@@ -5,6 +5,7 @@ import { solutions } from '../../_data/content';
 import { productCatalog } from '../../_data/content';
 import { getProductDetails, productFamilies } from '../../_data/products';
 import { PageFrame, PageHero, ProjectCTA } from '../../_components/site';
+import { canonicalUrl } from '../../_data/metadata';
 
 const origin =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${solution.name} | ${solution.label} Solutions | K2VOLT`,
     description: solution.summary,
+    alternates: { canonical: canonicalUrl(`/solutions/${slug}/`) },
     openGraph: { title: `${solution.name} | K2VOLT`, description: solution.summary, images: [{ url: image, alt: solution.alt }] },
     twitter: { card: 'summary_large_image', title: `${solution.name} | K2VOLT`, description: solution.summary, images: [image] },
   };

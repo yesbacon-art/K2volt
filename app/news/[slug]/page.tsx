@@ -5,6 +5,7 @@ import { news } from '../../_data/content';
 import { PageFrame } from '../../_components/site';
 import { NewsCard } from '../../_components/news-card';
 import { editorialContext } from '../../_data/editorial';
+import { canonicalUrl } from '../../_data/metadata';
 
 const origin =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${item.title} | K2VOLT`,
     description: item.excerpt,
+    alternates: { canonical: canonicalUrl(`/news/${slug}/`) },
     openGraph: { title: item.title, description: item.excerpt, type: 'article', images: [{ url: image }] },
     twitter: { card: 'summary_large_image', title: item.title, description: item.excerpt, images: [image] },
   };

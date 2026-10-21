@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { Arrow, PageFrame, PageHero } from '../_components/site';
 import { InquiryForm } from '../_components/inquiry-form';
+import { canonicalUrl } from '../_data/metadata';
 
 export const metadata: Metadata = {
   title: 'Contact K2VOLT | Start an Energy Project',
   description: 'Talk to K2VOLT about energy storage, EV charging, or AIDC power infrastructure.',
+  alternates: { canonical: canonicalUrl('/contact/') },
 };
 
 export default function ContactPage() {

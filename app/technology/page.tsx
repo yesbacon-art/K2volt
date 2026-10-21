@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
+import { canonicalUrl } from '../_data/metadata';
 
 const layers = [
   { number: '01', title: 'Battery systems', label: 'Energy capacity', copy: 'Define how much energy the application needs, how it will be used, and the battery operating conditions that matter at the site.', scope: ['Load profile and operating duration', 'Battery format and installation environment', 'Thermal design and operating limits'] },
@@ -17,6 +18,7 @@ const integration = [
 export const metadata: Metadata = {
   title: 'System Architecture & Energy Controls | K2VOLT Technology',
   description: 'Explore K2VOLT’s battery, power-equipment and energy-control approach, with application-specific integration and project-planning requirements.',
+  alternates: { canonical: canonicalUrl('/technology/') },
 };
 
 export default function TechnologyPage() {

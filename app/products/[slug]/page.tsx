@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { productCatalog } from '../../_data/content';
-import { getProductDetails } from '../../_data/products';
+import { canCompareProduct, getProductDetails } from '../../_data/products';
+import { absoluteSiteUrl, canonicalUrl } from '../../_data/metadata';
 import { PageFrame } from '../../_components/site';
 import { PrintButton } from '../../_components/print-button';
 import { CatalogDownload } from '../../_components/catalog-download';
@@ -22,7 +23,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const product = productCatalog.find((item) => item.slug === slug);
   if (!product) return {};
-  return { title: `${product.name} | ${product.spec} | K2VOLT`, description: getProductDetails(product).description, alternates: { canonical: `/products/${slug}/` } };
+  const title = `${product.name} | ${product.spec} | K2VOLT`;
+  const description = `${product.name}: ${product.spec}. ${getProductDetails(product).description}`;
+  const canonical = canonicalUrl(`/products/${slug}/`);
+  const image = absoluteSiteUrl(product.image);
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: canonical,
+      images: [{ url: image, alt: `${product.name} — ${product.spec} — K2VOLT catalog visualization` }],
+    },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
+  };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -50,7 +67,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div><p className="section-kicker">{product.category}</p><h1>{product.name}</h1><p className="product-detail-spec">{product.spec}</p><p>{details.description}</p>
           <dl className="product-key-values">{details.energy ? <div><dt>Listed energy</dt><dd>{details.energy}</dd></div> : null}{details.power ? <div><dt>Listed power</dt><dd>{details.power}</dd></div> : null}{!details.energy && !details.power ? <div><dt>System layer</dt><dd>Energy controls</dd></div> : null}</dl>
           <div className="product-actions"><Link className="button button-primary" href={`/contact?product=${product.slug}`}>Discuss this product</Link><PrintButton /></div>
-          <Link className="inline-link product-compare-link" href={`/products/?family=${details.solution}&compare=${product.slug}#comparison`}>Compare within this family</Link>
+          {canCompareProduct(product) ? <Link className="inline-link product-compare-link" href={`/products/?family=${details.solution}&compare=${product.slug}#comparison`}>Compare within this family</Link> : <p className="product-availability">Currently the only catalog entry in this family. <Link href={`/contact?product=${product.slug}`}>Ask about project configuration</Link>.</p>}
           <p className="product-availability">Project configuration · Confirm availability and market compatibility with K2VOLT.</p>
         </div>
       </div>

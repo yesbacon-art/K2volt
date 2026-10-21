@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { solutions } from '../_data/content';
 import { PageFrame, PageHero, ProjectCTA, SolutionPreview } from '../_components/site';
+import { canonicalUrl } from '../_data/metadata';
 
 export const metadata: Metadata = {
   title: 'Energy & Power Solutions | K2VOLT',
   description: 'Residential, commercial, utility-scale, EV charging, and AIDC power solutions from K2VOLT.',
+  alternates: { canonical: canonicalUrl('/solutions/') },
 };
 
 export default function SolutionsPage() {

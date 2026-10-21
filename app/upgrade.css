@@ -14,8 +14,8 @@ a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .button { font: inherit; font-size: 15px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; line-height: 1.4; text-align: center; }
 .button-primary { border: 1px solid var(--navy); background: var(--navy); color: #fff; }
 .button-quiet { border: 1px solid #a6b8c1; background: transparent; color: var(--navy); }
-.skip-link { position: absolute; top: -100px; left: 24px; z-index: 100; padding: 12px 20px; background: #fff; color: var(--ink); }
-.skip-link:focus { top: 12px; }
+.skip-link { position: fixed; top: 12px; left: 24px; z-index: 100; padding: 12px 20px; background: #fff; color: var(--ink); transform: translateY(calc(-100% - 24px)); clip-path: inset(50%); }
+.skip-link:focus-visible { transform: translateY(0); clip-path: none; }
 .header-actions { justify-self: end; display: flex; gap: 12px; align-items: center; }
 .site-header { grid-template-columns: auto 1fr auto; gap: 32px; }
 .desktop-nav { justify-self: center; gap: clamp(16px, 2vw, 32px); }
@@ -147,6 +147,12 @@ footer { padding-top: 48px; }
 .catalog-card-actions { padding: 0 24px 22px; }
 .catalog-card-actions button { display: block; width: 100%; min-height: 44px; border: 1px solid #a6b8c1; background: #fff; padding: 10px 14px; color: var(--navy); font-size: 14px; text-align: center; }
 .catalog-card-actions button[aria-pressed='true'] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.catalog-project-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 14px; border: 1px solid #a6b8c1; font-size: 14px; color: var(--navy); }
+.catalog-shortlist { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; justify-content: space-between; padding: 16px 18px; margin-top: 18px; background: #f2f7f8; border: 1px solid #d5e2e7; }
+.catalog-shortlist > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.catalog-shortlist button { min-height: 40px; border: 1px solid #bed0d9; background: #fff; color: var(--navy); padding: 8px 12px; font-size: 14px; display: inline-flex; align-items: center; gap: 14px; }
+.catalog-shortlist button span { font-size: 20px; line-height: 1; }
+.catalog-shortlist .shortlist-clear { border-color: transparent; background: transparent; text-decoration: underline; text-underline-offset: 3px; }
 .catalog-compare-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; }
 .catalog-compare-tools p { font-size: 14px; color: var(--muted); margin: 0; }
 .comparison-status { font-size: 14px; color: #07596e; margin: 14px 0; }
@@ -216,6 +222,10 @@ footer { padding-top: 48px; }
 .inquiry-panel h2 { font-size: clamp(30px,3vw,42px); }
 .inquiry-intro { margin: 18px 0 28px; color: var(--muted); }
 .inquiry-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.inquiry-panel input[aria-invalid='true'], .inquiry-panel select[aria-invalid='true'], .inquiry-panel textarea[aria-invalid='true'] { border-color: #ad3030; }
+.inquiry-panel label .inquiry-field-error { color: #9e2525; font-size: 13px; font-weight: 500; line-height: 1.5; }
+.inquiry-error-summary { color: #8d2424; background: #fff5f4; border-left: 3px solid #b5443b; padding: 14px 18px; margin-bottom: 24px; font-size: 14px; }
+.inquiry-error-summary p { margin: 0; }
 .inquiry-panel label span { font-weight: 400; color: var(--muted); }
 .inquiry-brief { grid-column: 1 / -1; }
 .inquiry-privacy { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 24px 0; }
@@ -415,7 +425,6 @@ footer { padding-top: 48px; }
   .heritage-chronology-list > li { grid-template-columns: 1fr; gap: 16px; }
   .heritage-chronology-source { grid-column: 1; }
   .site-header { height: 76px; padding-inline: 20px; gap: 10px; }
-  .brand-picture { width: 100px; }
   .header-actions { gap: 8px; }
   .nav-cta { font-size: 14px; min-height: 44px; padding: 10px 12px; }
   .menu-toggle { padding-inline: 12px; gap: 10px; }

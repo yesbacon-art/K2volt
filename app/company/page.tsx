@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
+import { canonicalUrl } from '../_data/metadata';
 
 const futurePriorities = [
   ['01', 'Research in America', 'Develop next-generation storage systems, controls, and operating intelligence around American customers and grid conditions.'],
@@ -49,6 +50,7 @@ const leadershipTeam = [
 export const metadata: Metadata = {
   title: 'About K2VOLT | American Energy Infrastructure Company',
   description: 'K2VOLT is an American-owned K2 Energy brand focused on storage, charging, and AIDC power infrastructure.',
+  alternates: { canonical: canonicalUrl('/company/') },
 };
 
 export default function CompanyPage() {

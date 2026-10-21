@@ -9,6 +9,10 @@ export const productFamilies = [
   { category: 'AIDC power', label: 'Energy intelligence', solution: 'aidc-power' },
 ] as const;
 
+export function canCompareProduct(product: Product) {
+  return productCatalog.filter(item => item.category === product.category).length > 1;
+}
+
 const configurations: Record<Product['slug'], { energy?: string; power?: string; format: string; extra?: [string, string] }> = {
   'home-1': { energy: '1.0 kWh', format: 'Portable power station', extra: ['Battery chemistry', 'LiFePO₄'] },
   'home-2': { energy: '2.0 kWh', format: 'Portable home backup' },

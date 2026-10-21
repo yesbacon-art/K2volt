@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { getProductDetails, type Product } from '../_data/products';
+import { canCompareProduct, getProductDetails, type Product } from '../_data/products';
 
 export function ProductComparison({ products, onRemove, onClear }: {
   products: Product[];
@@ -13,6 +13,7 @@ export function ProductComparison({ products, onRemove, onClear }: {
     if (window.location.hash === '#comparison') document.getElementById('comparison')?.scrollIntoView();
   }, []);
   const details = products.map(getProductDetails);
+  const comparisonAvailable = products.length > 0 && canCompareProduct(products[0]);
   const extraLabels = [...new Set(details.flatMap(item => item.extra ? [item.extra[0]] : []))];
   const rows = [
     { label: 'Equipment format', values: details.map(item => item.format) },
@@ -21,8 +22,8 @@ export function ProductComparison({ products, onRemove, onClear }: {
     ...extraLabels.map(label => ({ label, values: details.map(item => item.extra?.[0] === label ? item.extra[1] : 'Not listed — confirm') })),
   ];
   return <section className="product-comparison" id="comparison" aria-labelledby="comparison-title">
-    <div className="comparison-heading"><div><p className="section-kicker">Your shortlist</p><h2 id="comparison-title">Compare configurations.</h2></div><button type="button" className="button button-quiet" onClick={onClear}>Clear selection</button></div>
-    {products.length < 2 ? <p className="comparison-guidance">Select one more product from the same family to compare. You can select up to three.</p> : null}
+    <div className="comparison-heading"><div><p className="section-kicker">Your shortlist</p><h2 id="comparison-title">{comparisonAvailable ? 'Compare configurations.' : 'Configuration overview.'}</h2></div><button type="button" className="button button-quiet" onClick={onClear}>Clear selection</button></div>
+    {!comparisonAvailable ? <p className="comparison-guidance">One configuration is currently listed in this family. Contact K2VOLT to discuss a project-specific scope.</p> : products.length < 2 ? <p className="comparison-guidance">Select one more product from the same family to compare. You can select up to three.</p> : null}
     <div className="comparison-table-scroll" role="region" aria-label="Product comparison table; scroll horizontally on smaller screens" tabIndex={0}>
       <table className="comparison-table"><caption className="sr-only">Listed catalog configurations; not certified technical specifications</caption><thead><tr><th scope="col">Catalog configuration</th>{products.map(product => <th scope="col" key={product.slug}><img src={product.image} alt="" width="240" height="180" loading="lazy" decoding="async" /><Link href={`/products/${product.slug}`}>{product.name}</Link><button type="button" onClick={() => onRemove(product.slug)} aria-label={`Remove ${product.name} from comparison`}>Remove</button></th>)}</tr></thead><tbody>
         {rows.map(row => <tr key={row.label}><th scope="row">{row.label}</th>{row.values.map((value, index) => <td key={products[index].slug}>{value}</td>)}</tr>)}

@@ -68,7 +68,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   display: block;
   width: 112px;
-  height: 72px;
+  height: 80px;
   overflow: hidden;
   flex: 0 0 auto;
 }
@@ -78,7 +78,7 @@ a { color: inherit; text-decoration: none; }
   max-width: none;
   height: auto;
   left: -71px;
-  top: -46px;
+  top: -43px;
 }
 .desktop-nav {
   display: flex;

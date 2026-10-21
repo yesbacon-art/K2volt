@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageFrame, PageHero, ProjectCTA } from '../_components/site';
+import { canonicalUrl } from '../_data/metadata';
 
 const nevadaRecord = 'https://www.leg.state.nv.us/App/InterimCommittee/REL/Document/17343';
 const portfolio = 'https://www.sbir.gov/portfolio/207156';
@@ -27,6 +28,7 @@ const researchSources = [
 export const metadata: Metadata = {
   title: 'K2 Energy Heritage | K2VOLT',
   description: 'Explore K2 Energy’s Nevada origins and documented U.S. battery research through a source-linked historical timeline.',
+  alternates: { canonical: canonicalUrl('/heritage/') },
 };
 
 export default function HeritagePage() {

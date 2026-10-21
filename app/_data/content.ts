@@ -65,18 +65,18 @@ export const solutions = [
   },
   {
     slug: 'aidc-power',
-    label: 'AIDC Power Modules',
+    label: 'AIDC Energy & Controls',
     name: 'K2 AIDC',
-    statement: 'Resilient power for intelligence at scale.',
+    statement: 'Energy visibility for intelligence at scale.',
     image: '/images/visual-review/aidc.webp',
     alt: 'K2VOLT modular battery-backed power infrastructure for an American AI data center',
     summary:
-      'Modular battery-backed power infrastructure for AI data centers, designed around high-density loads, operational continuity, and clear energy visibility.',
-    applications: ['AI data-center continuity', 'High-density load support', 'On-site energy optimization'],
+      'K2 Energy OS is the currently listed control-software layer for AI infrastructure. Battery, UPS and complete power-module configurations require separate project engineering confirmation.',
+    applications: ['Energy-asset visibility', 'Operating coordination', 'AI infrastructure energy planning'],
     capabilities: [
-      ['Mission-critical architecture', 'Shape battery, power-conversion, and control layers around the continuity requirements of AI infrastructure.'],
-      ['Modular power blocks', 'Scale through repeatable equipment modules that support phased deployment and evolving compute demand.'],
-      ['Energy intelligence', 'Coordinate stored energy, facility demand, and available grid capacity through a connected operating layer.'],
+      ['Control-software scope', 'Define the asset interfaces, operating data and control permissions required for the project.'],
+      ['Hardware integration scope', 'Confirm battery, UPS and power-conversion equipment separately; these are not standalone products in the current AIDC catalog.'],
+      ['Operating coordination', 'Agree on supported monitoring, dispatch and alarm responsibilities before integrating equipment.'],
     ],
   },
 ] as const;

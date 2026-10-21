@@ -1,29 +1,24 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { NewsItem } from '../_data/content';
 import { filterStories, newsSections, type NewsSection } from '../_data/editorial';
 import { NewsCard } from './news-card';
+import { QuerySync, updateQuery } from './query-sync';
 
 export function NewsArchive({ items }: { items: readonly NewsItem[] }) {
-  const [section, setSection] = useState<NewsSection>('all');
-  const [query, setQuery] = useState('');
-  useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get('section');
-    const matched = newsSections.find(([value]) => value === requested);
-    if (matched) setSection(matched[0]);
-  }, []);
+  const [urlQuery, setUrlQuery] = useState('');
+  const params = new URLSearchParams(urlQuery);
+  const section = newsSections.find(([value]) => value === params.get('section'))?.[0] ?? 'all';
+  const query = params.get('q') ?? '';
   const search = query.trim().toLowerCase();
   const results = filterStories(items, section, query);
   function chooseSection(value: NewsSection) {
-    setSection(value);
-    const url = new URL(window.location.href);
-    if (value === 'all') url.searchParams.delete('section');
-    else url.searchParams.set('section', value);
-    window.history.replaceState(null, '', url);
+    setUrlQuery(updateQuery({ section: value === 'all' ? null : value }, 'push'));
   }
   return (
     <div className="news-library" id="archive">
+      <QuerySync onChange={setUrlQuery} />
       <div className="news-library-controls">
         <div className="news-filters" role="group" aria-label="Filter stories by category">
           {newsSections.map(([value, label]) => (
@@ -31,12 +26,12 @@ export function NewsArchive({ items }: { items: readonly NewsItem[] }) {
           ))}
         </div>
         <label className="news-search">Search the archive
-          <input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Topic, year or region" />
+          <input type="search" value={query} onChange={event => setUrlQuery(updateQuery({ q: event.target.value || null }))} placeholder="Topic, year or region" />
         </label>
       </div>
       <p className="news-result-count" aria-live="polite" aria-atomic="true">{results.length} {results.length === 1 ? 'story' : 'stories'}{search ? ` matching “${query.trim()}”` : ''}</p>
       {results.length ? <div className="news-grid">{results.map(item => <NewsCard key={item.slug} item={item} />)}</div> : (
-        <div className="news-empty"><h3>No stories found.</h3><p>Try another topic or browse all categories.</p><button className="button button-quiet" type="button" onClick={() => { setQuery(''); chooseSection('all'); }}>Reset filters</button></div>
+        <div className="news-empty"><h3>No stories found.</h3><p>Try another topic or browse all categories.</p><button className="button button-quiet" type="button" onClick={() => setUrlQuery(updateQuery({ section: null, q: null }, 'push'))}>Reset filters</button></div>
       )}
     </div>
   );

@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import { PageFrame } from '../_components/site';
 import { NewsArchive } from '../_components/news-archive';
 import { news } from '../_data/content';
+import { canonicalUrl } from '../_data/metadata';
 
 export const metadata: Metadata = {
   title: 'News, Research & K2 Energy Archive | K2VOLT',
   description: 'K2VOLT updates, energy perspectives, and source-linked K2 Energy research history, with Australian references clearly distinguished.',
+  alternates: { canonical: canonicalUrl('/news/') },
 };
 
 export default function NewsPage() {

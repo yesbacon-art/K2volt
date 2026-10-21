@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import { news, solutions } from './_data/content';
+import { canonicalUrl } from './_data/metadata';
 import Link from 'next/link';
 import {
   NewsCard,
@@ -7,6 +9,10 @@ import {
   SiteHeader,
   SolutionPreview,
 } from './_components/site';
+
+export const metadata: Metadata = {
+  alternates: { canonical: canonicalUrl('/') },
+};
 
 export default function Home() {
   return (
