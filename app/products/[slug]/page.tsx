@@ -7,6 +7,7 @@ import { absoluteSiteUrl, canonicalUrl } from '../../_data/metadata';
 import { PageFrame } from '../../_components/site';
 import { PrintButton } from '../../_components/print-button';
 import { CatalogDownload } from '../../_components/catalog-download';
+import { getInquiryHref } from '../../_data/project-inquiry';
 
 const documentationScope = [
   ['Dimensions & weight', 'Request the dimensional drawing and equipment weight for the selected configuration.'],
@@ -66,8 +67,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <figure className="product-image-stage"><div className="product-detail-image"><img src={product.image} alt={`${product.name} — K2VOLT`} width="800" height="800" decoding="async" /></div><figcaption>Catalog visualization · final equipment configuration is confirmed for each project.</figcaption></figure>
         <div><p className="section-kicker">{product.category}</p><h1>{product.name}</h1><p className="product-detail-spec">{product.spec}</p><p>{details.description}</p>
           <dl className="product-key-values">{details.energy ? <div><dt>Listed energy</dt><dd>{details.energy}</dd></div> : null}{details.power ? <div><dt>Listed power</dt><dd>{details.power}</dd></div> : null}{!details.energy && !details.power ? <div><dt>System layer</dt><dd>Energy controls</dd></div> : null}</dl>
-          <div className="product-actions"><Link className="button button-primary" href={`/contact?product=${product.slug}`}>Discuss this product</Link><PrintButton /></div>
-          {canCompareProduct(product) ? <Link className="inline-link product-compare-link" href={`/products/?family=${details.solution}&compare=${product.slug}#comparison`}>Compare within this family</Link> : <p className="product-availability">Currently the only catalog entry in this family. <Link href={`/contact?product=${product.slug}`}>Ask about project configuration</Link>.</p>}
+          <div className="product-actions"><Link className="button button-primary" href={getInquiryHref([product])}>Discuss this product</Link><PrintButton /></div>
+          {canCompareProduct(product) ? <Link className="inline-link product-compare-link" href={`/products/?family=${details.solution}&compare=${product.slug}#comparison`}>Compare within this family</Link> : <p className="product-availability">Currently the only catalog entry in this family. <Link href={getInquiryHref([product])}>Ask about project configuration</Link>.</p>}
           <p className="product-availability">Project configuration · Confirm availability and market compatibility with K2VOLT.</p>
         </div>
       </div>

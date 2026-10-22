@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { canCompareProduct, getProductDetails, type Product } from '../_data/products';
+import { getInquiryHref } from '../_data/project-inquiry';
 
 export function ProductComparison({ products, onRemove, onClear }: {
   products: Product[];
@@ -29,9 +30,10 @@ export function ProductComparison({ products, onRemove, onClear }: {
         {rows.map(row => <tr key={row.label}><th scope="row">{row.label}</th>{row.values.map((value, index) => <td key={products[index].slug}>{value}</td>)}</tr>)}
         <tr><th scope="row">Project planning</th>{details.map((item, index) => <td key={products[index].slug}><ul>{item.requirements.map(requirement => <li key={requirement}>{requirement}</li>)}</ul></td>)}</tr>
         <tr><th scope="row">Technical documentation</th>{products.map(product => <td key={product.slug}>Dimensions, detailed ratings, certifications and warranty terms require confirmation.<Link className="inline-link" href={`/products/${product.slug}#documentation`}>Review documentation scope</Link></td>)}</tr>
-        <tr><th scope="row">Next step</th>{products.map(product => <td key={product.slug}><Link className="inline-link" href={`/contact?product=${product.slug}`}>Discuss {product.name}</Link></td>)}</tr>
+        <tr><th scope="row">Next step</th>{products.map(product => <td key={product.slug}><Link className="inline-link" href={getInquiryHref([product])}>Discuss {product.name}</Link></td>)}</tr>
       </tbody></table>
     </div>
     <p className="comparison-disclaimer">Listed capacity is not a guarantee of usable energy, runtime or delivered performance. Compare within one family, then confirm the electrical, installation and service scope for your project.</p>
+    <div className="comparison-next-step"><div><h3>Take your shortlist further.</h3><p>Bring {products.length > 1 ? 'these configurations' : 'this configuration'} into one project brief, with the listed catalog values and product links already included.</p></div><Link className="button button-primary" href={getInquiryHref(products)}>Discuss {products.length > 1 ? `${products.length} configurations` : 'this configuration'} <span aria-hidden="true">↗</span></Link></div>
   </section>;
 }

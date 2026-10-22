@@ -7,6 +7,7 @@ import { canCompareProduct, getProductDetails, productFamilies, type Product } f
 import { ProductComparison } from './product-comparison';
 import { changeComparison, parseComparison } from '../_data/product-selection';
 import { QuerySync, updateQuery } from './query-sync';
+import { getInquiryHref } from '../_data/project-inquiry';
 
 export function ProductCatalog() {
   const [urlQuery, setUrlQuery] = useState('');
@@ -55,7 +56,7 @@ export function ProductCatalog() {
     {selectedFamily && guidance ? <aside className="catalog-family-guidance"><div><p className="section-kicker">{selectedFamily.label}</p><p>{guidance.description}</p></div><Link className="inline-link" href={`/solutions/${selectedFamily.solution}`}>Explore the application</Link></aside> : null}
     <p className="catalog-count" role="status" aria-live="polite">{products.length} {products.length === 1 ? 'product' : 'products'}{family !== 'all' ? ` · ${family}` : ' across five families'}</p>
     <div className="catalog-compare-tools"><p>{singleConfiguration ? 'One configuration is currently listed in this family. Discuss your site requirements to define the right project scope.' : 'Select two or three products within one family to compare their listed configurations.'}</p>{compared.length ? <a className="inline-link" href="#comparison">View {canCompareProduct(compared[0]) ? 'comparison' : 'configuration'} · {compared.length} selected</a> : null}</div>
-    {compared.length ? <div className="catalog-shortlist" aria-label="Selected configurations"><div>{compared.map(item => <button key={item.slug} type="button" onClick={() => { updateShortlist(shortlist.filter(id => id !== item.slug)); setComparisonNotice(`${item.name} removed from comparison.`); }} aria-label={`Remove ${item.name} from comparison`}>{item.name}<span aria-hidden="true">×</span></button>)}</div><button className="shortlist-clear" type="button" onClick={() => { updateShortlist([]); setComparisonNotice('Comparison selection cleared.'); }}>Clear selection</button></div> : null}
+    {compared.length ? <div className="catalog-shortlist" aria-label="Selected configurations"><div>{compared.map(item => <button key={item.slug} type="button" onClick={() => { updateShortlist(shortlist.filter(id => id !== item.slug)); setComparisonNotice(`${item.name} removed from comparison.`); }} aria-label={`Remove ${item.name} from comparison`}>{item.name}<span aria-hidden="true">×</span></button>)}</div><div className="shortlist-actions"><button className="shortlist-clear" type="button" onClick={() => { updateShortlist([]); setComparisonNotice('Comparison selection cleared.'); }}>Clear selection</button><Link className="button button-primary" href={getInquiryHref(compared)}>Discuss {compared.length > 1 ? 'these configurations' : 'this configuration'} <span aria-hidden="true">↗</span></Link></div></div> : null}
     <p className="comparison-status" role="status" aria-live="polite">{comparisonNotice}</p>
     {products.length ? <div className="product-catalog-grid">
       {products.map((product) => { const details = getProductDetails(product); return <article className="product-catalog-card" key={product.slug}><Link href={`/products/${product.slug}`} className="product-catalog-link">
